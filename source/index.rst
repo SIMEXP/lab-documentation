@@ -1,6 +1,6 @@
 
 
-Welcome to simexp-documentation's documentation!
+Welcome to simexp's documentation!
 ================================================
 
 Please help us write this documentation
