@@ -26,70 +26,70 @@ In the mean-time, `jupyter notebook <https://jupyter.org/>`_ provides a portable
 Hand's on
 :::::::::
 
-Here, we will learn how to launch your favourite notebooks on a remote server (could be CRIUGM, or computecanada)
+Here, we will learn how to train a deep model on a remote server (could be CRIUGM, or computecanada)
 using `singularity <https://singularity.lbl.gov/>`_.
 
 .. note::
     ``singularity`` containers are gaining a lot of popularity in the HPC world, because it is now easy as never to share a reproducible
     pipeline working smoothly on a remote server.
 
-We will work on the really known `cifar10 <https://www.cs.toronto.edu/~kriz/cifar.html>`_ dataset using simple CNN with an encoder with 4 layers,
+We are using `cifar10 <https://www.cs.toronto.edu/~kriz/cifar.html>`_ dataset using a simple CNN with an encoder with 4 layers,
 and 3 dense layers.
 
-.. code-block::
+.. literalinclude:: files/mnist.py
+    :linenos:
 
 
-Upload your data in the server
-------------------------------
+Upload your data and conncet to the server
+------------------------------------------
 
-1. Upload the notebook(s)
-```
-rsync -rlt --info=progress2 <my_local_file> <user_name>@thuya.criugm.qc.ca:~/path/where/you/want/<my_remote_file>
-```
-
-1. upload the database
-```
-rsync -rlt --info=progress2 <my_local_database> ${USER}@thuya.criugm.qc.ca:~/path/where/you/want/<my_remote_database>
-```
-**Please ensure that the data is not already available somewhere on** `/data/cisl`
-
-Connect to the desired server
------------------------------
-
-1.  Open a cmd prompt
-
-2.  Connect to ``meleze`` (passwordless authentification is assumed)
+1.  Upload the python script we just wrote on the server:
 
     .. code-block:: bash
 
-        ssh <user_name>@meleze
+        rsync -rlt --info=progress2 ``mnist.py`` <user_name>@pin.criugm.qc.ca:~/path/where/you/want/<my_remote_file>
 
-### Launch the container
+2.  Connect to ``pin``
 
-1. go to `/data/cisl/CONTAINERS`
-```
-cd /data/cisl/CONTAINERS
+    .. code-block:: bash
 
-```
-2. run the tensorflow cpu image
-```
-singularity exec -B <notebook_path>:/notebooks deep-neuro-docker.simg jupyter notebook --notebook-dir=/notebooks --no-browser --allow-root
-```
-or the GPU version with the `--nv` option
-```
-singularity exec --nv -B <notebook_path>:/notebooks deep-neuro-docker-gpu.simg jupyter notebook --notebook-dir=/notebooks --no-browser --allow-root
-```
+        ssh <user_name>@pin
 
-If you have a user space on the server and installed anaconda, you could have some trouble because singularity image mounts by default your home to the container. It can then load the library from the server/your local computer instead of the libraries inside the container !
-To avoid this please use this command instead :
-```
-singularity exec -B <notebook_path>:/notebooks,<notebook_path>:/home/$USER --no-home deep-neuro-docker.simg jupyter notebook --notebook-dir=/notebooks --no-browser --allow-root
-```
-### Work on the notebook remotely !
+We will launch this script using the container `deep-neuro-docker <https://github.com/SIMEXP/deep-neuro-docker>`_ available on github.
+It is already installed on our server at ``/data/cisl/CONTAINERS/deep-neuro-docker-gpu.simg``.
 
-1. Open a **new command prompt**
+.. note::
+    The `deep-neuro-docker <https://github.com/SIMEXP/deep-neuro-docker>`_ container is only compatible with `tensorflow 2.0 <https://www.tensorflow.org/versions/r2.0/api_docs/python/tf>`
+     for both GPU and CPU.
+    Other software like `pytorch <https://pytorch.org/>` are also considered to be included in the future.
 
-2. Create a ssh tunnel so you can work on your browser locally (even if it is running remotely)
+Launch the container
+--------------------
+
+1.  Load the singularity module to enable it,
+
+    .. code-block:: bash
+
+        module load singularity
+
+2.  Run the tensorflow gpu container,
+
+    .. code-block:: bash
+
+        singularity exec --nv deep-neuro-docker-gpu.simg jupyter notebook --notebook-dir=~/ --no-browser --allow-root
+
+.. note::
+    CPU version is also available using ``singularity exec deep-neuro-docker.simg jupyter notebook --notebook-dir=~/ --no-browser --allow-root``
+
+.. warning::
+    If you installed anaconda on your home folder, you will likely have some trouble because singularity image mounts by default your home to the container.
+    It then loads the library from the host instead of the libraries inside the container! To avoid this use this command instead 
+    :code:`singularity exec -B <script_path>:/notebooks --no-home deep-neuro-docker.simg jupyter notebook --notebook-dir=/notebooks --no-browser --allow-root`
+
+Work on the notebook remotely
+-----------------------------
+
+1. Create a ssh tunnel so you can work on your browser locally (even if it is running remotely)
 ```
 ssh -L <server_port>:localhost:<server_port> pin
 ```
