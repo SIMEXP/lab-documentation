@@ -1,40 +1,50 @@
 Deep learning on a remote server
 ================================
 
-You will use singularity to launch a deeplearning container on a remote server.
+You are probably in the case where you would like to use tensorflow on a remote server, to access the computation power from HPC.
+It is now relatively easy to have a ready to use environment for your applications, specially for GPUs!
 
-Requirements
+Pre-requisites
+::::::::::::::
+* Basics use of Linux (cmd line, shell scripting, ssh)
+* Our `ssh tutorial <https://github.com/SIMEXP/tutorials/blob/master/ssh_connection/Connect_with_ssh.md>`_
+* Basic knowledge on containerized app (Docker, singularity)
 
-    Basics use of Linux (cmd line, shell scripting, ssh)
-    Basic knowledge on containerized app (Docker, singularity)
-    connection to a remote server
+What will you learn ?
+:::::::::::::::::::::
+* Use singularity container
+* Work on jupyter notebook for deep learning
+* Establish secure connection and port-forwarding from the server to your computer
 
-What you will learn
+Why using containers ?
+::::::::::::::::::::::
 
-    Use singularity container
-    Work on jupyter notebook for deep learning
-    Establish secure connection and port-forwarding from the server to your computer
+Container technology like `Docker <https://www.docker.com/>`_ is a major breakthrough in data science. 
+Indeed, it allows for **reproducible**, **large-scale** and **burden-free environment setup**.
+In the mean-time, `jupyter notebook <https://jupyter.org/>`_ provides a portable **interactive coding session**, and is easy to use.
+
+Hand's on
+:::::::::
+
+Here, we will learn how to launch your favourite notebooks on a remote server (could be CRIUGM, or computecanada)
+using `singularity <https://singularity.lbl.gov/>`_.
+
+.. note::
+    ``singularity`` containers are gaining a lot of popularity in the HPC world, because it is now easy as never to share a reproducible
+    pipeline working smoothly on a remote server.
+
+We will work on the really known `cifar10 <https://www.cs.toronto.edu/~kriz/cifar.html>`_ dataset using simple CNN with an encoder with 4 layers,
+and 3 dense layers.
+
+.. code-block::
 
 
-Containerized technology is one of the major change in scientific world.
-It allows **reproducible**, **large-scale** and **burden-free environment setup** for science.
-In the mean-time, jupyter notebook provides a **interactive coding session** and easy way to work on python environment.
-You will learn how to launch your favourite **notebook** on a **remote server** (from CRIUGM, or computecanada) using a specialized container technology called **[singularity](https://singularity.lbl.gov/)**, which allows you to run containers without sudo rights.
+Upload your data in the server
+------------------------------
 
-### Connect to the desired server
-
-1. open a cmd prompt
-
-2. connect on `thuya` (passwordless authentification is assumed)
+1. Upload the notebook(s)
 ```
-ssh ${USER}@thuya
-```
-
-### (if necessary) Upload your data in the server
-
-1. upload he notebooks
-```
-rsync -rlt --info=progress2 <my_local_file> ${USER}@thuya.criugm.qc.ca:~/path/where/you/want/<my_remote_file>
+rsync -rlt --info=progress2 <my_local_file> <user_name>@thuya.criugm.qc.ca:~/path/where/you/want/<my_remote_file>
 ```
 
 1. upload the database
@@ -42,6 +52,17 @@ rsync -rlt --info=progress2 <my_local_file> ${USER}@thuya.criugm.qc.ca:~/path/wh
 rsync -rlt --info=progress2 <my_local_database> ${USER}@thuya.criugm.qc.ca:~/path/where/you/want/<my_remote_database>
 ```
 **Please ensure that the data is not already available somewhere on** `/data/cisl`
+
+Connect to the desired server
+-----------------------------
+
+1.  Open a cmd prompt
+
+2.  Connect to ``meleze`` (passwordless authentification is assumed)
+
+    .. code-block:: bash
+
+        ssh <user_name>@meleze
 
 ### Launch the container
 
