@@ -1,13 +1,6 @@
 A binder tutorial
 =================
 
-This is a short tutorial on how to create a binder executable environment.
-
-
-
-What is Binder ?
-::::::::::::::::
-
 Binder allows you to execute and share notebooks to anyone using the web.
 The way `Binder <https://github.com/jupyterhub/binderhub>`_ download the notebooks is through a GitHub repo, where the user should specify the environment to run them.
 This make your work reproducible and shareable very easy like never before!
@@ -18,24 +11,49 @@ It ties together many technologies :
 * `JupyterHub <https://jupyter.org/hub>`_, which uses `kubernetes <https://kubernetes.io/>`_ to share multiple instances of notebooks among many users.
 * `repo2docker <https://github.com/jupyter/repo2docker>`_, a tool that converts GitHub repositories into Jupyter-enabled Docker images.
 
+Pre-requisites
+::::::::::::::
+* GitHub ease
+* Basic knowledge on python packages (pip)
+
+What will you learn ?
+:::::::::::::::::::::
+* Create a binder link
+
 How to upload a work on Binder ?
 ::::::::::::::::::::::::::::::::
 
-Have a GitHub account (GitLab, Gist also supported).
+Of course, you will need a GitHub account (GitLab, Gist also supported).
+After you can:
 
-Create a repository with at leat one notebook (your work), and its dependencies listed in a file requirements.txt.
+1.  Create a repository with at least one notebook (your work).
+2.  Make the ``requirements.txt`` file, containing all the dependencies for your notebook(s).
+3.  Build your repository into a Docker image that will host your interactive notebooks : https://mybinder.org/
+4.  After few seconds, the link to share your notebook(s) from your GitHub repository are ready. Share it to anyone who has an internet browser!
 
-Build your repository into a Docker image that will host your interactive notebooks : https://mybinder.org/
+Check `this repo <https://github.com/ltetrel/binder-tuto>`_, it contains all the necessary requirements.
 
-You can now share the link of the environment to anyone who has a browser !
 Few tips
+::::::::
 
-    You can find other examples here.
+If you execute your notebook before pushing it to github, any user that open the session will have a ready to play environment (without the need to re-execute the notebook).
 
-    If you execute your notebook before pushing it to github, any user that open the session will have a ready to play environment (without the need to re-execute the notebook).
+You can add a badge in your repository:
 
-    You can add a badge in your repository. When clicking to this badge, anyone can access the executable environment in an easy way ! Just add this snippet to your README:
+.. image:: https://mybinder.org/badge_logo.svg
+    :target: https://mybinder.org/v2/gh/ltetrel/binder-tuto/master?filepath=notebooks%2Fnilearn-example.ipynb
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/<user_name>/<repo_name>/master)
+When clicking on this badge, anyone can access the executable environment in an easy way.
+Just add this snippet to your file, it can be either a ``.md`` or ``.rst``:
 
-    Adding ?urlpath=lab at the end of the link will open a jupyter lab environment. You can also point to a notebook with ?filepath=notebooks%2Fnilearn-example.ipynb !
+.. code-block:: markdown
+
+    [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/<user_name>/<repo_name>/master)
+
+.. code-block:: rst
+
+    .. image:: https://mybinder.org/badge_logo.svg
+        :target: https://mybinder.org/v2/gh/ltetrel/binder-tuto/master?filepath=notebooks%2Fnilearn-example.ipynb
+
+Adding ``?urlpath=lab`` at the end of the link will open a jupyter lab environment.
+You can also point to a specific notebook with ``?filepath=notebooks%2Fnilearn-example.ipynb``!
