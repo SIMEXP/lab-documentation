@@ -18,8 +18,8 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'simexp-documentation'
-copyright = '2020, Pierre Bellec, Julie Boyle, Emilie Dessureault, Arnaud Boré, Basile Pinsard'
-author = 'Pierre Bellec, Julie Boyle, Emilie Dessureault, Arnaud Boré, Basile Pinsard'
+copyright = '2020, SIMEXP Pierre Bellec'
+author = 'Pierre Bellec, Julie Boyle, Emilie Dessureault, Arnaud Boré, Basile Pinsard, Loic Tetrel'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
