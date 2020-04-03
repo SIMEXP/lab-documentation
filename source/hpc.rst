@@ -37,10 +37,6 @@ For that, you will need a compute-canada account:
 .. warning::
     If you can't connect at this point, you would want to check the `server status <https://status.computecanada.ca/>`_.
 
-.. note::
-    Though it is not recomended because of performance, you can log in while enabling display by using the x11 forwarding option :code:`ssh -Y`.
-    This can be usefull if you are running for example MATLAB and need a the GUI.
-
 When you first registered, everything wil be setup automatically so you can continue this tutorial without bothering.
 
 Hand's on
