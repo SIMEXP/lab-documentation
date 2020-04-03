@@ -9,6 +9,7 @@ Please help us write this documentation
    :maxdepth: 2
    :caption: Contents:
 
+   tutorials/ssh.rst
 
 
 Indices and tables
