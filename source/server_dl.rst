@@ -40,20 +40,25 @@ and 3 dense layers.
     :linenos:
 
 
-Upload your data and conncet to the server
+Upload your data and conncet to the GPU server
 ------------------------------------------
 
-1.  Upload the python script we just wrote on the server:
+1.  Create on your machine a jupyer notebook ``mnist.ipynb`` containing the previous code.
+
+2. Upload the notebook on the server:
 
     .. code-block:: bash
 
-        rsync -rlt --info=progress2 ``mnist.py`` <user_name>@pin.criugm.qc.ca:~/path/where/you/want/<my_remote_file>
+        rsync -rlt --info=progress2 ``mnist.py`` <user_name>@meleze.criugm.qc.ca:~/path/where/you/want/<my_remote_file>
 
-2.  Connect to ``pin``
+    .. note::
+        We are using the server ``meleze`` which has a GTX 1070, of course you can choose any server you have access to.
+
+2.  Connect to ``meleze``
 
     .. code-block:: bash
 
-        ssh <user_name>@pin
+        ssh <user_name>@meleze
 
 We will launch this script using the container `deep-neuro-docker <https://github.com/SIMEXP/deep-neuro-docker>`_ available on github.
 It is already installed on our server at ``/data/cisl/CONTAINERS/deep-neuro-docker-gpu.simg``.
@@ -78,30 +83,33 @@ Launch the container
 
         singularity exec --nv deep-neuro-docker-gpu.simg jupyter notebook --notebook-dir=~/ --no-browser --allow-root
 
-.. note::
-    CPU version is also available using ``singularity exec deep-neuro-docker.simg jupyter notebook --notebook-dir=~/ --no-browser --allow-root``
+    .. note::
+        CPU version is also available using ``singularity exec deep-neuro-docker.simg jupyter notebook --notebook-dir=~/ --no-browser --allow-root``
 
-.. warning::
-    If you installed anaconda on your home folder, you will likely have some trouble because singularity image mounts by default your home to the container.
-    It then loads the library from the host instead of the libraries inside the container! To avoid this use this command instead 
-    :code:`singularity exec -B <script_path>:/notebooks --no-home deep-neuro-docker.simg jupyter notebook --notebook-dir=/notebooks --no-browser --allow-root`
+    .. warning::
+        If you installed anaconda on your home folder, you will likely have some trouble because singularity image mounts by default your home to the container.
+        It then loads the library from the host instead of the libraries inside the container! To avoid this use this command instead 
+        :code:`singularity exec -B <script_path>:/notebooks --no-home deep-neuro-docker.simg jupyter notebook --notebook-dir=/notebooks --no-browser --allow-root`
 
 Work on the notebook remotely
 -----------------------------
 
-1. Create a ssh tunnel so you can work on your browser locally (even if it is running remotely)
+Create a ssh tunnel so you can work on your browser locally (even if it is running remotely):
     
-    .. code-block:: bash
+.. code-block:: bash
 
-        ssh -L <server_port>:localhost:<server_port> pin
+    ssh -L 6789:localhost:<server_port> meleze
 
-    Where the output from jupyter on the remote indicates you the server port that is in use `http://localhost:<server_port>` :
+Where the output from jupyter on the remote host indicates what is the ``<server_port>``, in this example it is ``8889``:
 
-    <img src="notebook_weblink.png" width="500">
+.. image:: img/notebook_weblink
+    :width: 400px
 
-    If nobody is using the server ports, it will be usually `8888`.
+.. note::
+    Usually, when nobody is using a notebook server, the port will typically be ``8888``.
 
-3. You can now just open a web browser with the jupyter hyperlink
+You can now click on ``http:localhost:6789``, to open the localhost on your browser from your machine.
+You will have access to the usual jupyter environment, launch the notebook to check that it is indeed using the GPU!
 
 *If you need other libraries for your application, it is possible to update the container.*
 
