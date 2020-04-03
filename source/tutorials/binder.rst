@@ -1,4 +1,4 @@
-A binder tutorial
+A Binder tutorial
 =================
 
 Binder allows you to execute and share notebooks to anyone using the web.
