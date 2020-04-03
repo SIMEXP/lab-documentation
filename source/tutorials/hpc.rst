@@ -9,7 +9,7 @@ Don't hesitate to check the `compute canada website <https://docs.computecanada.
 Pre-requisites
 ::::::::::::::
 * Basics use of Linux (cmd line, shell scripting)
-* Our `ssh tutorial <https://github.com/SIMEXP/tutorials/blob/master/ssh_connection/Connect_with_ssh.md>`_
+* Our tutorial on :doc:`ssh`
 * Basic knowledge on containerized app (Docker, singularity)
 
 What will you learn ?
@@ -149,14 +149,13 @@ Before continuing this tutorial, you should `install the latest singularity <htt
 
         rsync -rlt --progress anaconda3.simg par_job.py params cedar.computecanada.ca:~/projects/def-pbellec/<user_name>/
 
-5.  We will submit a whole batch of jobs with just one script ``simple_ar_job.bash`` using the `job array <https://slurm.schedmd.com/job_array.html>`_ mechanism.
+5.  We will submit a whole batch of jobs with just one script ``simple_ar_job.bash`` using the `job array <https://docs.computecanada.ca/wiki/Running_jobs#Array_job>`_ mechanism.
     This will allows us to run our application in parrallel among many nodes on computecanada.
 
     .. literalinclude:: files/simple_ar_job.bash
         :linenos:
 
-    The line :code:`#SBATCH --array=1-10` tells you that this is a `job array <https://docs.computecanada.ca/wiki/Running_jobs#Array_job>`_
-    and you specified here that you will run 10 parrallel jobs.
+    The line :code:`#SBATCH --array=1-10` tells you that this is a ``job array`` and you specified here that you will run 10 parrallel jobs.
     Using :code:`--array=1-10%2` you said that no more than 2 jobs will run in parrallel, :code:`--array=1-10:2` is equivalent to :code:`--array=1,3,5,7,9`.
     :code:`PARAMS=$(cat params | head -n $SLURM_ARRAY_TASK_ID| tail -n 1)` is used to read all the parameters that you want to pass to the python script from the file ``params``.
     Take care of the folder mount there, :code:`singularity --quiet exec -B ~/projects/rrg-pbellec/<user_name>/:/scripts`, so the directory on your host 
@@ -189,8 +188,11 @@ Before continuing this tutorial, you should `install the latest singularity <htt
 9.  When the jobs are finished, check the log and all the files ``slurm-<jobid>.out``.
     Each of them should contain the numbers ranging from :math:`n+1` to :math:`n+10`.
 
-TIPS
-::::
+A few tips
+::::::::::
+
+SLURM notifications on slack
+----------------------------
 
 It is possible to allow slack to send you notifications when a job is running, finished etc.. 
 

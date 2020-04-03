@@ -7,7 +7,7 @@ It is now relatively easy to have a ready to use environment for your applicatio
 Pre-requisites
 ::::::::::::::
 * Basics use of Linux (cmd line, shell scripting, ssh)
-* Our `ssh tutorial <https://github.com/SIMEXP/tutorials/blob/master/ssh_connection/Connect_with_ssh.md>`_
+* Our tutorial on :doc:`ssh`
 * Basic knowledge on containerized app (Docker, singularity)
 
 What will you learn ?
@@ -45,7 +45,7 @@ Upload your data and conncet to the GPU server
 
 1.  Create on your machine a jupyer notebook ``mnist.ipynb`` containing the previous code.
 
-2. Upload the notebook on the server:
+2.  Upload the notebook on the server:
 
     .. code-block:: bash
 
@@ -60,12 +60,11 @@ Upload your data and conncet to the GPU server
 
         ssh <user_name>@meleze
 
-We will launch this script using the container `deep-neuro-docker <https://github.com/SIMEXP/deep-neuro-docker>`_ available on github.
-It is already installed on our server at ``/data/cisl/CONTAINERS/deep-neuro-docker-gpu.simg``.
+We will launch this notebook using the container `deep-neuro-docker <https://github.com/SIMEXP/deep-neuro-docker>`_, 
+already installed on our server at ``/data/cisl/CONTAINERS/deep-neuro-docker-gpu.simg``.
+It a ready to use jupyter environment with `tensorflow 2.0 <https://www.tensorflow.org/versions/r2.0/api_docs/python/tf>`_ for both GPU and CPU.
 
 .. note::
-    The `deep-neuro-docker <https://github.com/SIMEXP/deep-neuro-docker>`_ container is only compatible with 
-    `tensorflow 2.0 <https://www.tensorflow.org/versions/r2.0/api_docs/python/tf>`_ for both GPU and CPU.
     Other software like `pytorch <https://pytorch.org/>`_ are also considered to be included in the future.
 
 Launch the container

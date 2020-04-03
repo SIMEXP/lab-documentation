@@ -86,8 +86,8 @@ Connect to a server
 .. note::
     You can also connect to a server via its public IP in the form XXX.XX.XX.XX
 
-TIPS
-::::
+A few tips
+::::::::::
 
 Automatic authentification
 --------------------------

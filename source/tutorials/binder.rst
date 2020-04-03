@@ -33,10 +33,16 @@ After you can:
 
 Check `this repo <https://github.com/ltetrel/binder-tuto>`_, it contains all the necessary requirements.
 
-Few tips
-::::::::
+A few tips
+::::::::::
+
+Hosting the static execution
+----------------------------
 
 If you execute your notebook before pushing it to github, any user that open the session will have a ready to play environment (without the need to re-execute the notebook).
+
+Binder badge
+------------
 
 You can add a badge in your repository:
 
@@ -55,5 +61,21 @@ Just add this snippet to your file, it can be either a ``.md`` or ``.rst``:
     .. image:: https://mybinder.org/badge_logo.svg
         :target: https://mybinder.org/v2/gh/ltetrel/binder-tuto/master?filepath=notebooks%2Fnilearn-example.ipynb
 
+JupyterLab
+----------
+
+`JupyterLab <https://jupyterlab.readthedocs.io/en/stable/>`_ is a more powerfull web IDE for jupyter notebooks.
 Adding ``?urlpath=lab`` at the end of the link will open a jupyter lab environment.
-You can also point to a specific notebook with ``?filepath=notebooks%2Fnilearn-example.ipynb``!
+
+Pointing to a specific notebook
+-------------------------------
+
+You can point to a specific notebook ``nilearn-example.ipynb`` by adding ``?filepath=notebooks%2Fnilearn-example.ipynb`` at the end of the binder url.
+
+.. note::
+    The slashes ``/`` are replaced by ``%2F``.
+
+Questions ?
+:::::::::::
+
+If you have any issues using compute canada, don't hesitate to ask your questions on the SIMEXP lab slack in ``#conp`` channel!
