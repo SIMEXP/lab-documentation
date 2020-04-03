@@ -9,7 +9,7 @@ Please help us write this documentation
    :maxdepth: 2
    :caption: Contents:
 
-
+   tutorials/binder.rst
 
 Indices and tables
 ==================
