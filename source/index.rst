@@ -9,7 +9,7 @@ Please help us write this documentation
    :maxdepth: 2
    :caption: Contents:
 
-
+   tutorials/hpc.rst
 
 Indices and tables
 ==================
