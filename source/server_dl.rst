@@ -30,10 +30,10 @@ Here, we will learn how to train a deep model on a remote server (could be CRIUG
 using `singularity <https://singularity.lbl.gov/>`_.
 
 .. note::
-    ``singularity`` containers are gaining a lot of popularity in the HPC world, because it is now easy as never to share a reproducible
-    pipeline working smoothly on a remote server.
+    ``singularity`` containers are gaining a lot of popularity in the HPC world, because it is now easy as never to share reproducible
+    applications working smoothly on a remote server.
 
-We are using `cifar10 <https://www.cs.toronto.edu/~kriz/cifar.html>`_ dataset using a simple CNN with an encoder with 4 layers,
+We are using `cifar10 <https://www.cs.toronto.edu/~kriz/cifar.html>`_ dataset using a simple CNN containing an encoder with 4 layers,
 and 3 dense layers.
 
 .. literalinclude:: files/mnist.py
@@ -49,7 +49,7 @@ Upload your data and conncet to the GPU server
 
     .. code-block:: bash
 
-        rsync -rlt --info=progress2 ``mnist.py`` <user_name>@meleze.criugm.qc.ca:~/path/where/you/want/<my_remote_file>
+        rsync -rlt --info=progress2 mnist.ipynb <user_name>@meleze.criugm.qc.ca:~/
 
     .. note::
         We are using the server ``meleze`` which has a GTX 1070, of course you can choose any server you have access to.
@@ -64,9 +64,9 @@ We will launch this script using the container `deep-neuro-docker <https://githu
 It is already installed on our server at ``/data/cisl/CONTAINERS/deep-neuro-docker-gpu.simg``.
 
 .. note::
-    The `deep-neuro-docker <https://github.com/SIMEXP/deep-neuro-docker>`_ container is only compatible with `tensorflow 2.0 <https://www.tensorflow.org/versions/r2.0/api_docs/python/tf>`
-     for both GPU and CPU.
-    Other software like `pytorch <https://pytorch.org/>` are also considered to be included in the future.
+    The `deep-neuro-docker <https://github.com/SIMEXP/deep-neuro-docker>`_ container is only compatible with 
+    `tensorflow 2.0 <https://www.tensorflow.org/versions/r2.0/api_docs/python/tf>`_ for both GPU and CPU.
+    Other software like `pytorch <https://pytorch.org/>`_ are also considered to be included in the future.
 
 Launch the container
 --------------------
@@ -81,15 +81,15 @@ Launch the container
 
     .. code-block:: bash
 
-        singularity exec --nv deep-neuro-docker-gpu.simg jupyter notebook --notebook-dir=~/ --no-browser --allow-root
+        singularity exec --nv /data/cisl/CONTAINERS/deep-neuro-docker-gpu.simg jupyter notebook --notebook-dir=~/ --no-browser --allow-root
 
     .. note::
-        CPU version is also available using ``singularity exec deep-neuro-docker.simg jupyter notebook --notebook-dir=~/ --no-browser --allow-root``
+        CPU version is also available using the ``deep-neuro-docker.simg`` container.
 
     .. warning::
         If you installed anaconda on your home folder, you will likely have some trouble because singularity image mounts by default your home to the container.
-        It then loads the library from the host instead of the libraries inside the container! To avoid this use this command instead 
-        :code:`singularity exec -B <script_path>:/notebooks --no-home deep-neuro-docker.simg jupyter notebook --notebook-dir=/notebooks --no-browser --allow-root`
+        It then loads the library from the host instead of the libraries inside the container! To avoid this, use the following command instead:
+        :code:`singularity exec -B <path/to/notebook>:/notebooks --no-home deep-neuro-docker-gpu.simg jupyter notebook --notebook-dir=/notebooks --no-browser --allow-root`
 
 Work on the notebook remotely
 -----------------------------
@@ -100,17 +100,19 @@ Create a ssh tunnel so you can work on your browser locally (even if it is runni
 
     ssh -L 6789:localhost:<server_port> meleze
 
-Where the output from jupyter on the remote host indicates what is the ``<server_port>``, in this example it is ``8889``:
+Where the output from jupyter on the remote server indicates what is the ``<server_port>``, in this example it is ``8889``:
 
-.. image:: img/notebook_weblink
-    :width: 400px
+.. image:: img/notebook_weblink.png
+    :width: 600px
 
 .. note::
-    Usually, when nobody is using a notebook server, the port will typically be ``8888``.
+    Usually, when nobody uses a notebook server on the remote, the port will typically be ``8888``.
 
-You can now click on ``http:localhost:6789``, to open the localhost on your browser from your machine.
-You will have access to the usual jupyter environment, launch the notebook to check that it is indeed using the GPU!
+Click on `http://localhost:6789 <http://localhost:6789>`_, to open the localhost on your browser from your machine.
+You should have now access to the usual jupyter environment, launch ``mnist.ipynb`` to check that it is indeed using the GPU!
 
-*If you need other libraries for your application, it is possible to update the container.*
+Questions ?
+:::::::::::
 
-*Please ask to* : @ltetrel
+If you have any issues using jupyter notebooks, you can ask on the SIMEXP lab slack in ``#python`` channel!
+For any other questions related to setup (containers) ask in #neuroinformatics.
