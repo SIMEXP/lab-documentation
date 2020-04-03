@@ -12,7 +12,7 @@ Please help us write this documentation
    tutorials/hpc.rst
    tutorials/server_dl.rst
    tutorials/binder.rst
-   tutorials/git-crypt.rst
+   tutorials/git_crypt.rst
    tutorials/submit_pr.rst
    tutorials/ssh.rst
 
