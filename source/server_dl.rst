@@ -90,14 +90,16 @@ Work on the notebook remotely
 -----------------------------
 
 1. Create a ssh tunnel so you can work on your browser locally (even if it is running remotely)
-```
-ssh -L <server_port>:localhost:<server_port> pin
-```
-Where the output from jupyter on the remote indicates you the server port that is in use `http://localhost:<server_port>` :
+    
+    .. code-block:: bash
 
-<img src="notebook_weblink.png" width="500">
+        ssh -L <server_port>:localhost:<server_port> pin
 
-If nobody is using the server ports, it will be usually `8888`.
+    Where the output from jupyter on the remote indicates you the server port that is in use `http://localhost:<server_port>` :
+
+    <img src="notebook_weblink.png" width="500">
+
+    If nobody is using the server ports, it will be usually `8888`.
 
 3. You can now just open a web browser with the jupyter hyperlink
 
