@@ -1,0 +1,9 @@
+Host server1
+	HostName server2.domain.cloud.com
+    User root
+    IdentityFile ~/.ssh/root/id_root
+    LocalForward 1234 localhost:80
+
+Host server2
+	HostName 200.00.00.00
+	User ubuntu
