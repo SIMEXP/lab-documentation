@@ -54,6 +54,7 @@ Create encription keys
     .. code:: bash
 
         cat ~/.ssh/id_rsa.pub
+        cat ~/.ssh/id_rsa
 
     It should look like:
 
