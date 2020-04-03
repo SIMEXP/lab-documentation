@@ -40,8 +40,8 @@ and 3 dense layers.
     :linenos:
 
 
-Upload your data and conncet to the GPU server
-------------------------------------------
+Upload your data and connect to the GPU server
+----------------------------------------------
 
 1.  Create on your machine a jupyer notebook ``mnist.ipynb`` containing the previous code.
 
