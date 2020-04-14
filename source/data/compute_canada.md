@@ -4,7 +4,15 @@ These resources are limited and are to be shared fairly across members of the la
 Given that no member of the lab has priviledged admin rights, this fairness relies on everyone adopting a clear code of conduct, and shared organization.
 If not, other members of the lab will see their analysis/data transfer/... fail, and they will be discouraged to use these incredible resources, and to do research at all.
 
-When you are new to Compute Canada, we will ask you to run a setup script that will set data management access and give you access to utils for project management.
+When you are new to Compute Canada, we will ask you to run a setup script that will set data management access and give you access to utils for project management, including:
+
+- setup ACLs for the data admin to the project and nearline folders
+- add project management commands to your bash environment
+- generate SSH keys if not already created, and help you set them up on Github for easier access
+- configure the ssh agent and keychain to avoid typing your ssh key password each time you push to github or ssh to another server.
+- configure git global variables
+
+
 You can do it just once on each cluster:
 
 ```
