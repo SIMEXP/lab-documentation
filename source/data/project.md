@@ -85,7 +85,7 @@ Here is what it looks like
 
 Go to the github organization where you want to host that project (SIMEXP or courtois-neuromod for instance).
 
-Create a new repository named <my_new_project_name>, copy the ssh URL on the right side (TODO: screenshot).
+Create a new empty (no README, no license, nothing) repository named <my_new_project_name>, copy the ssh URL on the right side (TODO: screenshot).
 
 Then within the project dir on the cluster, save all the changes and link and sync to the github repo as the origin remote, eg.
 
@@ -129,5 +129,3 @@ Once you activated the project using `workon <my_project>`, you can add datasets
 `use_dataset <dataset_name> <version>` TODO: write the command/alias for datalad install reckless as a subdataset in the current PROJECT_DIR/data/ and checkout tag.
 
 The dataset is now installed in the `data` directory of the current project directory.
-
-## keeping packages in sync
