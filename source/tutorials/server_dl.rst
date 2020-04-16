@@ -43,7 +43,7 @@ and 3 dense layers.
 Upload your data and connect to the GPU server
 ----------------------------------------------
 
-1.  Create on your machine a jupyer notebook ``mnist.ipynb`` containing the previous code.
+1.  Create a jupyer notebook ``mnist.ipynb`` on your machine , containing the previous code.
 
 2.  Upload the notebook on the server:
 
@@ -60,15 +60,16 @@ Upload your data and connect to the GPU server
 
         ssh <user_name>@meleze
 
-We will launch this notebook using the container `deep-neuro-docker <https://github.com/SIMEXP/deep-neuro-docker>`_, 
+Launch the container
+--------------------
+
+We will now launch this notebook using the container `deep-neuro-docker <https://github.com/SIMEXP/deep-neuro-docker>`_, 
 already installed on our server at ``/data/cisl/CONTAINERS/deep-neuro-docker-gpu.simg``.
-It a ready to use jupyter environment with `tensorflow 2.0 <https://www.tensorflow.org/versions/r2.0/api_docs/python/tf>`_ for both GPU and CPU.
+It is a ready to use jupyter environment with `tensorflow 2.0 <https://www.tensorflow.org/versions/r2.0/api_docs/python/tf>`_ for both GPU and CPU.
 
 .. note::
     Other software like `pytorch <https://pytorch.org/>`_ are also considered to be included in the future.
 
-Launch the container
---------------------
 
 1.  Load the singularity module to enable it,
 
@@ -90,13 +91,15 @@ Launch the container
         It then loads the library from the host instead of the libraries inside the container! To avoid this, use the following command instead:
         :code:`singularity exec -B <path/to/notebook>:/notebooks --no-home deep-neuro-docker-gpu.simg jupyter notebook --notebook-dir=/notebooks --no-browser --allow-root`
 
-Work on the notebook remotely
------------------------------
+Work on the notebook remotely from home
+---------------------------------------
 
-Create a ssh tunnel so you can work on your browser locally (even if it is running remotely):
-    
+Because you are in your own home network, you will need to use ``elm`` as an external bridge to the criugm network.
+Create two ssh tunnels so you can work on your browser locally (even if it is running remotely):
+
 .. code-block:: bash
 
+    ssh -L 6789:localhost:6789 elm.criugm.qc.ca
     ssh -L 6789:localhost:<server_port> meleze
 
 Where the output from jupyter on the remote server indicates what is the ``<server_port>``, in this example it is ``8889``:
@@ -105,7 +108,11 @@ Where the output from jupyter on the remote server indicates what is the ``<serv
     :width: 600px
 
 .. note::
-    Usually, when nobody uses a notebook server on the remote, the port will typically be ``8888``.
+    If nobody uses a notebook server on the remote, ``<server_port>`` will typically be ``8888``.
+
+.. note::
+    If you are inside the criugm network via ethernet (not wi-fi), you have direct access to the compute servers (meleze, ginkgo etc..).
+    In this case you don't need to use ``elm``, just connect directly to ``meleze`` :code:`ssh -L 6789:localhost:<server_port> meleze`.
 
 Click on `http://localhost:6789 <http://localhost:6789>`_, to open the localhost on your browser from your machine.
 You should have now access to the usual jupyter environment, launch ``mnist.ipynb`` to check that it is indeed using the GPU!
@@ -114,4 +121,4 @@ Questions ?
 :::::::::::
 
 If you have any issues using jupyter notebooks, you can ask on the SIMEXP lab slack in ``#python`` channel!
-For any other questions related to setup (containers) ask in #neuroinformatics.
+For any other questions related to setup (containers) ask in ``#neuroinformatics``.
