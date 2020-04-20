@@ -52,14 +52,8 @@ You can add a badge in your repository:
 When clicking on this badge, anyone can access the executable environment in an easy way.
 Just add this snippet to your file, it can be either a ``.md`` or ``.rst``:
 
-.. code-block:: markdown
-
-    [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/<user_name>/<repo_name>/master)
-
-.. code-block:: rst
-
-    .. image:: https://mybinder.org/badge_logo.svg
-        :target: https://mybinder.org/v2/gh/ltetrel/binder-tuto/master?filepath=notebooks%2Fnilearn-example.ipynb
+.. image:: https://mybinder.org/badge_logo.svg
+  :target: https://mybinder.org/v2/gh/ltetrel/binder-tuto/master?filepath=notebooks%2Fnilearn-example.ipynb
 
 JupyterLab
 ----------

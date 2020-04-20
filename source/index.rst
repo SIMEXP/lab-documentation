@@ -7,6 +7,12 @@ Please help us write this documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: Compute canada
+
+   compute_canada/starter.md
+
+.. toctree::
+   :maxdepth: 1
    :caption: Tutorials
 
    tutorials/hpc.rst
