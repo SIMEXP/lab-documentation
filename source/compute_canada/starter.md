@@ -2,7 +2,7 @@
 
 The lab applies for storage space and compute time on Compute Canada every year.
 These resources are limited and have to be shared fairly across members of the lab.
-Given that no member of the lab has priviledged admin rights, this fairness relies on everyone adopting a clear code of conduct, and shared organization.
+Given that no member of the lab has privileged admin rights, this fairness relies on everyone adopting a clear code of conduct, and shared organization.
 
 ## Setup your environment
 
