@@ -21,6 +21,7 @@ Please help us write this documentation
    tutorials/git_crypt.rst
    tutorials/submit_pr.rst
    tutorials/ssh.rst
+   tutorials/fmriprep.rst
 
 Indices and tables
 ==================
