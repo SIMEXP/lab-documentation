@@ -15,7 +15,7 @@ mkproject <my_new_project_name>
 
 2. initialize the project architecture from the recommended template using cookiecutter
 ```
-cookiecutter -o $PROJECT_HOME -f  https://github.com/drivendata/cookiecutter-data-science
+cookiecutter -o $PROJECT_HOME -f  https://github.com/SIMEXP/cookiecutter-data-science
 project_name [project_name]: <my_new_project_name>
 repo_name [my_new_project_name]:    
 author_name [Your name (or your organization/company/team)]: <SIMEXP|courtois-neuromod>
