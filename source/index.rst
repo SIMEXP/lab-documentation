@@ -13,6 +13,12 @@ Please help us write this documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: Data management
+
+   data/project.md
+
+.. toctree::
+   :maxdepth: 1
    :caption: Tutorials
 
    tutorials/hpc.rst
