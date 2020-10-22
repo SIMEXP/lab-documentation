@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Secure Shell connection &mdash; simexp-documentation 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> simexp-documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Secure Shell connection</a><ul>
+<li><a class="reference internal" href="#pre-requisites">Pre-requisites</a></li>
+<li><a class="reference internal" href="#what-will-you-learn">What will you learn ?</a></li>
+<li><a class="reference internal" href="#the-importance-of-key-pairs">The importance of key-pairs</a></li>
+<li><a class="reference internal" href="#hand-s-on">Hand’s on</a><ul>
+<li><a class="reference internal" href="#create-encription-keys">Create encription keys</a></li>
+<li><a class="reference internal" href="#connect-to-a-server">Connect to a server</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tips">TIPS</a><ul>
+<li><a class="reference internal" href="#automatic-authentification">Automatic authentification</a></li>
+<li><a class="reference internal" href="#easy-ssh">Easy ssh</a></li>
+<li><a class="reference internal" href="#enabling-display">Enabling display</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#questions">Questions ?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">simexp-documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Secure Shell connection</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/ssh.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="secure-shell-connection">
+<h1>Secure Shell connection<a class="headerlink" href="#secure-shell-connection" title="Permalink to this headline">¶</a></h1>
+<p>Secure Shell (ssh) is a protocol that uses encryption to secure the connection between a client and a server.
+It is the standard way of communicating to any data center.</p>
+<p><a class="reference external" href="https://www.openssh.com/">Openssh</a> is the most widely known open source implementation of the <code class="docutils literal notranslate"><span class="pre">ssh</span></code> protocol,
+and this is what we will be using for this tutorial.
+You will not need to install anything since it is already installed by default on many Linux systems.</p>
+<div class="section" id="pre-requisites">
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Basics use of Linux (cmd line)</p></li>
+</ul>
+</div>
+<div class="section" id="what-will-you-learn">
+<h2>What will you learn ?<a class="headerlink" href="#what-will-you-learn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Establish secure connection between your computer and a server</p></li>
+</ul>
+</div>
+<div class="section" id="the-importance-of-key-pairs">
+<h2>The importance of key-pairs<a class="headerlink" href="#the-importance-of-key-pairs" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ssh</span></code> uses <a class="reference external" href="https://en.wikipedia.org/wiki/Public-key_cryptography">public-key cryptography</a>, with the idea that a mathematical
+function can encode information in the form of random words through passwords. The passwords used to authentificate are called <em>encryption key-pair</em>:
+there is a public one (used to prove ownership) and a private one (to encrypt data).
+Just the owner of the private key can decode this information, otherwise it would require a hugh amount of compute power to decode it (finding big prime factors).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>No, <code class="docutils literal notranslate"><span class="pre">ssh</span></code> will not be dead because of quantum computing.
+There is a lot of research going on <a class="reference external" href="https://openquantumsafe.org/papers/NISTPQC-CroPaqSte19.pdf">post-quantum cryptography</a>.</p>
+</div>
+<p>Many application derives from this algorithm :</p>
+<ul class="simple">
+<li><p>Connect to your mail acount</p></li>
+<li><p>Pay via your credit card</p></li>
+<li><p>Paying games online</p></li>
+<li><p>Blockchain technology (mostly hashing algos)</p></li>
+</ul>
+</div>
+<div class="section" id="hand-s-on">
+<h2>Hand’s on<a class="headerlink" href="#hand-s-on" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-encription-keys">
+<h3>Create encription keys<a class="headerlink" href="#create-encription-keys" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Open a prompt with <code class="docutils literal notranslate"><span class="pre">ctrl+alt+t</span></code></p></li>
+<li><p>Create your keys</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen -t rsa
+</pre></div>
+</div>
+</li>
+<li><p>Press enter at each step</p></li>
+<li><p>Your private key <cite>~/.ssh/id_rsa</cite> and public key <cite>~/.ssh/id_rsa.pub</cite> are now on your cmputer, you can open them to see how they look like.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat ~/.ssh/id_rsa.pub
+</pre></div>
+</div>
+<p>It should look like:</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">-----</span><span class="n">BEGIN</span> <span class="n">PUBLIC</span> <span class="n">KEY</span><span class="o">-----</span>
+<span class="n">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiOOHnV8A4i5LNgVvgttw</span>
+<span class="n">TWsqpMMUlSgMA0IIZqn1NPr6MeVGqyaYYp5Gt6z99hrFWFCpLWtGiGfJksTEcBbJ</span>
+<span class="n">Km6ZdZkSgGOErQz3U7Q1Beltsrx4Xy</span><span class="o">+</span><span class="n">iTt1yy8J0s00usoEBl4e2gMV5Qo6jCvHH</span>
+<span class="o">+</span><span class="n">NHAOBt</span><span class="o">+</span><span class="n">BvRuEhdpjHAU7mdwZmq3BOSSi3GFXwcTXVuPQmj52Zc0oXogz8LpMuGN</span>
+<span class="n">S7Uy4CWiq5R1eqxSk8MzHqEc6erhFVBfV8QbOsk1COi9Iicaeo23xEsf3Skf6mdy</span>
+<span class="n">u8XT</span><span class="o">/</span><span class="n">kbOZys26hxfa5M</span><span class="o">+</span><span class="n">zexp</span><span class="o">+</span><span class="n">sjMnGDWv7</span><span class="o">/</span><span class="n">LWrfhLQKuW4aG9SyU2lxHkPEON53g</span>
+<span class="n">DQIDAQAB</span>
+<span class="o">-----</span><span class="n">END</span> <span class="n">PUBLIC</span> <span class="n">KEY</span><span class="o">-----</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">-----</span><span class="n">BEGIN</span> <span class="n">RSA</span> <span class="n">PRIVATE</span> <span class="n">KEY</span><span class="o">-----</span>
+<span class="n">MIIEpAIBAAKCAQEAiOOHnV8A4i5LNgVvgttwTWsqpMMUlSgMA0IIZqn1NPr6MeVG</span>
+<span class="n">qyaYYp5Gt6z99hrFWFCpLWtGiGfJksTEcBbJKm6ZdZkSgGOErQz3U7Q1Beltsrx4</span>
+<span class="n">Xy</span><span class="o">+</span><span class="n">iTt1yy8J0s00usoEBl4e2gMV5Qo6jCvHH</span><span class="o">+</span><span class="n">NHAOBt</span><span class="o">+</span><span class="n">BvRuEhdpjHAU7mdwZmq3</span>
+<span class="n">BOSSi3GFXwcTXVuPQmj52Zc0oXogz8LpMuGNS7Uy4CWiq5R1eqxSk8MzHqEc6erh</span>
+<span class="n">FVBfV8QbOsk1COi9Iicaeo23xEsf3Skf6mdyu8XT</span><span class="o">/</span><span class="n">kbOZys26hxfa5M</span><span class="o">+</span><span class="n">zexp</span><span class="o">+</span><span class="n">sjM</span>
+<span class="n">nGDWv7</span><span class="o">/</span><span class="n">LWrfhLQKuW4aG9SyU2lxHkPEON53gDQIDAQABAoIBAE3i8CG5kX4gCwk0</span>
+<span class="n">tIsHInHaXQwcN1Ta0WL1KmSHpY48kyjapIfzUNcj6WbO1j02ZDzowCmolRw9uXJ5</span>
+<span class="mi">5</span><span class="n">K9GN7Wd8lD4BI</span><span class="o">/</span><span class="n">qj</span><span class="o">+</span><span class="mi">4</span><span class="n">Kp5sHuPehJpqBJBg8uSQYWh3XiaEPdFd6kZZPUKcaNPGK</span>
+<span class="n">yPgMM9S</span><span class="o">+</span><span class="n">O5lxAxcf8pT2n0aZ6z7t3hM3Z</span><span class="o">/</span><span class="mi">7</span><span class="n">VsLbpye7hDJVSW7PDlNcFwgj3SSp7</span>
+<span class="n">DLH4Z</span><span class="o">+</span><span class="n">jdBSNDTg</span><span class="o">/</span><span class="mi">78</span><span class="n">YdaWYICpVmxIAepeujyDpn3YRsukiFcsUxUS9HNBa3O2sR5</span>
+<span class="n">oINFjOjNytCC0ZlNTCC</span><span class="o">+</span><span class="n">xoPARs4zVdT9</span><span class="o">+</span><span class="n">VVLM07QjRHUT2dnup7fMwDm8IFuV76N</span>
+<span class="mi">4</span><span class="n">wIw</span><span class="o">/</span><span class="n">F0CgYEA8WArvxGf2NyDP9n3Rqm6344P7Eo2ioDEXji8ctm3sIRAz3Kxh16x</span>
+<span class="n">zvv3u5UNynwFYbAqaMY18gAbj2x</span><span class="o">+</span><span class="n">SkJtWJkt5y9xON6JH9ZVsPEoNMBmpg3JIinp</span>
+<span class="n">ahnHthO</span><span class="o">/</span><span class="n">eWpzrcT8gywMDgGnoR</span><span class="o">/</span><span class="n">SpZ4VhIPs0dKUSY4QLncEMsOPaZsCgYEAkS66</span>
+<span class="n">MTnMPFGigdjvZiw80tcZGT2bmkxdPPOi</span><span class="o">+</span><span class="n">B9yQDwcN6cJXqIXKpaK5djmf</span><span class="o">/</span><span class="mi">7</span><span class="n">XHjmA</span>
+<span class="n">TZAQGRPe3uZGfKEE8PUo2DC1Xml</span><span class="o">+</span><span class="n">B5xNILeBKVQkYX0kijiOFZJoClpa51kQGBmR</span>
+<span class="n">uUJGbnpApL7ZxdrSQ9nFZi78tcMyxxNPQrFwa3cCgYEAi7oyWM8pC27Lg8D3xi4n</span>
+<span class="n">AZbJXO2xGQhlpG2PmaSzEzncErrATi7hG4L869fjPd4Bd4V1Z2WmgMrTKXmSugYu</span>
+<span class="n">KmWyDuyFzHf2RTncLSvNLIxcX7AHSQGeH0</span><span class="o">+</span><span class="n">BLsPLyct335Xy3zQ2Xj1S</span><span class="o">/</span><span class="n">pDfbgRP</span>
+<span class="n">TIDaLLSMJvBYKa23</span><span class="o">/</span><span class="n">nL6qBUCgYAEzO29KPMW34AnGPw5fab5NcGPsxjNDk9a75do</span>
+<span class="mi">6</span><span class="n">ulFNHeeY3iM14E6mEW5eeWNP</span><span class="o">+</span><span class="n">jvB</span><span class="o">+</span><span class="n">m1JtlRavXImwajolNegEy8cUfd</span><span class="o">+</span><span class="n">lD</span><span class="o">/</span><span class="n">gWyP</span>
+<span class="n">c2Hi8vRNAO1PYLVaA0BLb1doJOrCUT4fSRC5IHO4vtLGlwiy06WSTmVuwSiRqpLJ</span>
+<span class="n">WsKj2wKBgQC7faYawFuSTehpeUcZfL5P5</span><span class="o">+</span><span class="mi">9</span><span class="n">lV79tm9SwTakayYE8ESxNmuXqx24C</span>
+<span class="mi">9</span><span class="n">wouvhlmUia3reigiMU6B</span><span class="o">/</span><span class="n">HmL5nMR4Ep1FjAKHqyf0LlwBFA4wSOhfVZOehKtD</span><span class="o">/</span><span class="n">e</span>
+<span class="n">ic9keF5Mg9</span><span class="o">/</span><span class="n">SJZsUUXDH0by9cmgbakSRPOWyV</span><span class="o">/</span><span class="n">Q74xQX79zHbbKTKA</span><span class="o">==</span>
+<span class="o">-----</span><span class="n">END</span> <span class="n">RSA</span> <span class="n">PRIVATE</span> <span class="n">KEY</span><span class="o">-----</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You should NEVER share your private key <code class="docutils literal notranslate"><span class="pre">id_rsa</span></code> to anyone, nor leaving it on a remote server. As mentionned before, the private key allows to decode
+the informations you are sending. Avoid sharing the public key <code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code> if unnecessary, hackers could use it to identify you.</p>
+</div>
+</div>
+<div class="section" id="connect-to-a-server">
+<h3>Connect to a server<a class="headerlink" href="#connect-to-a-server" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>We will try to connect to <code class="docutils literal notranslate"><span class="pre">elm</span></code>,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh &lt;you_username&gt;@elm
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">ssh</span></code>, it will automatically detect your key under <code class="docutils literal notranslate"><span class="pre">~/.ssh</span></code>. You can specify a key with <code class="docutils literal notranslate"><span class="pre">-i</span> <span class="pre">/path/to/my/key</span></code>.</p>
+</div>
+</li>
+<li><p>You can now type your UNF password.</p></li>
+<li><p>On your computer, you will see a new file <code class="docutils literal notranslate"><span class="pre">~/.ssh/known_hosts</span></code>. It contains all the servers that you connected to.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also connect to a server via its public IP in the form XXX.XX.XX.XX</p>
+</div>
+</div>
+</div>
+<div class="section" id="tips">
+<h2>TIPS<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="automatic-authentification">
+<h3>Automatic authentification<a class="headerlink" href="#automatic-authentification" title="Permalink to this headline">¶</a></h3>
+<p>Every time you login to a server, you will be asked for the password if available.
+To avoid that, you can add your public key so the server doesn’t need your password to prove ownership.</p>
+<ol class="arabic">
+<li><p>Send your public key to the server,</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-copy-id &lt;you_username&gt;@elm
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>After log-in to the server, you will be asked for your password a last time.
+Whenever you log-in again, it should not ask for it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh &lt;your_username&gt;@elm
+</pre></div>
+</div>
+</li>
+<li><p>You can check the file <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> on the server, it should match your public key <code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code>.</p></li>
+</ol>
+</div>
+<div class="section" id="easy-ssh">
+<h3>Easy ssh<a class="headerlink" href="#easy-ssh" title="Permalink to this headline">¶</a></h3>
+<p>It can be cumbersome to type the <code class="docutils literal notranslate"><span class="pre">ssh</span></code> command if you have lot of arguments.
+For example, let’s say you want to set-up port forwarding on a specific server with a specific user, you would need to type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -L <span class="m">1234</span>:localhost:80 -i ~/.ssh/root/id_root root@server2.domain.cloud.com
+</pre></div>
+</div>
+<p>It is possible to put all the options inside a single file in <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code>, and call <code class="docutils literal notranslate"><span class="pre">ssh</span></code> with a single command.
+For example, you would call the previous command with just:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh server1
+</pre></div>
+</div>
+<p>With this <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code>:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">server1</span>
+	<span class="n">HostName</span> <span class="n">server2</span><span class="o">.</span><span class="n">domain</span><span class="o">.</span><span class="n">cloud</span><span class="o">.</span><span class="n">com</span>
+    <span class="n">User</span> <span class="n">root</span>
+    <span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">id_root</span>
+    <span class="n">LocalForward</span> <span class="mi">1234</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">80</span>
+
+<span class="n">Host</span> <span class="n">server2</span>
+	<span class="n">HostName</span> <span class="mf">200.00</span><span class="o">.</span><span class="mf">00.00</span>
+	<span class="n">User</span> <span class="n">ubuntu</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</div>
+<div class="section" id="enabling-display">
+<h3>Enabling display<a class="headerlink" href="#enabling-display" title="Permalink to this headline">¶</a></h3>
+<p>Though it is not recomended because of performance, you can log in while enabling display by using the <code class="docutils literal notranslate"><span class="pre">x11</span></code> forwarding option <code class="code docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-X</span></code>.
+This can be usefull if you are running MATLAB for example and need the graphical interface.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The server maybe doesn’t allow display, this can be checked from <code class="docutils literal notranslate"><span class="pre">X11Forwarding</span></code> option in <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code> (if you are root).</p>
+</div>
+</div>
+</div>
+<div class="section" id="questions">
+<h2>Questions ?<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<p>If you have any issues with ssh, you can ask on the SIMEXP lab slack in <code class="docutils literal notranslate"><span class="pre">#neuroinformatics</span></code> channel!</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, SIMEXP Pierre Bellec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

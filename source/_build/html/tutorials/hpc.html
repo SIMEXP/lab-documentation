@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using super computers from compute canada &mdash; simexp-documentation 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Deep learning on a remote server" href="server_dl.html" />
+    <link rel="prev" title="Welcome to simexp’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> simexp-documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using super computers from compute canada</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pre-requisites">Pre-requisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-will-you-learn">What will you learn ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connecting-to-compute-canada-server">Connecting to compute canada server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hand-s-on">Hand’s on</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submit-a-simple-serial-job">Submit a simple serial job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launch-a-parrallelized-in-a-containerized-app">Launch a parrallelized in a containerized app</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#a-few-tips">A few tips</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interactive-node">Interactive node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debugging-your-application">Debugging your application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slurm-notifications-on-slack">SLURM notifications on slack</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#questions">Questions ?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server_dl.html">Deep learning on a remote server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binder.html">A Binder tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_crypt.html">Encrypt your GitHub repository with git-crypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submit_pr.html">Submit a PR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssh.html">Secure Shell connection</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">simexp-documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Using super computers from compute canada</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/hpc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-super-computers-from-compute-canada">
+<h1>Using super computers from compute canada<a class="headerlink" href="#using-super-computers-from-compute-canada" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.computecanada.ca/home/">Compute-canada</a> is the provider of High Performance Computers (HPC) that allows you to achieve massive computation speed.
+It is a non-profit canadian organization providing free computation power to canadian institutions, so you should use it!</p>
+<p>Don’t hesitate to check the <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs">compute canada website</a> for more tutorials.</p>
+<div class="section" id="pre-requisites">
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Basics use of Linux (cmd line, shell scripting)</p></li>
+<li><p>Our tutorial on <a class="reference internal" href="ssh.html"><span class="doc">Secure Shell connection</span></a></p></li>
+<li><p>Basic knowledge on containerized app (Docker, singularity)</p></li>
+</ul>
+</div>
+<div class="section" id="what-will-you-learn">
+<h2>What will you learn ?<a class="headerlink" href="#what-will-you-learn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Connect to a compute canada node</p></li>
+<li><p>Submit a simple job to the server</p></li>
+<li><p>Launch a parrallelized containerized app</p></li>
+</ul>
+</div>
+<div class="section" id="connecting-to-compute-canada-server">
+<h2>Connecting to compute canada server<a class="headerlink" href="#connecting-to-compute-canada-server" title="Permalink to this headline">¶</a></h2>
+<p>The first thing to do is to connect to their server!
+For that, you will need a compute-canada account:</p>
+<ol class="arabic">
+<li><p>Go to the <a class="reference external" href="https://ccdb.computecanada.ca/security/login">login page</a></p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">register</span></code> and enter your personnal information.
+For the lab, the insitution is <code class="docutils literal notranslate"><span class="pre">udem</span></code> and the department is <code class="docutils literal notranslate"><span class="pre">Psychology</span></code>.
+You should also ask your sponsor (in our case Pierre Bellec) for his <code class="docutils literal notranslate"><span class="pre">CCRI</span> <span class="pre">reference</span> <span class="pre">number</span></code>.</p></li>
+<li><p>Once your registering is validated, you are ready to ssh into <a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga/en">beluga</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh &lt;your_username&gt;@beluga.computecanada.ca
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you can’t connect at this point, you would want to check the <a class="reference external" href="https://status.computecanada.ca/">server status</a>.</p>
+</div>
+<p>When you first registered, everything wil be setup automatically so you can continue this tutorial without bothering.</p>
+</div>
+<div class="section" id="hand-s-on">
+<h2>Hand’s on<a class="headerlink" href="#hand-s-on" title="Permalink to this headline">¶</a></h2>
+<p>When using HPC, you have to tell it how to interact between your program and the computers.
+Execution of one program is called a <em>job</em> and you will require to create a <em>job script</em> to interact with the HPCs.
+The HPC uses a <em>job scheduler</em> called <a class="reference external" href="https://slurm.schedmd.com/">SLURM</a> to decide when and where the job will be run.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using a scheduler has few advantages.</p>
+<p>Because the service is free, it is a way to ensure fair share between all users through
+<a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies">scheduling policies</a>. It is also a way to regularize the usage over time,
+so there is no huge peak of usage at any moment. Finally, submitting a job through a scheduler allow the user to work on other tasks
+independently and in parrallel.</p>
+</div>
+<p>There are two main types of jobs on HPCs, <em>serial</em> and <em>parrallel</em>.
+A <em>parrallel job</em> is a way to sumbit multiple jobs at the same time, but each task must be independent from each other.
+It is particulary usefull in machine learning when you are selecting hyper-parameters for example.
+On the other hand, with a <em>serial job</em> you are limited to one task</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The serial task can still run in parrallel itself by using multiple cores/cpus.</p>
+</div>
+<p>For the rest of the tutorial, all the files are availables at <a class="reference external" href="https://github.com/ltetrel/lab-documentation/source/files">https://github.com/ltetrel/lab-documentation/source/files</a></p>
+<div class="section" id="submit-a-simple-serial-job">
+<h3>Submit a simple serial job<a class="headerlink" href="#submit-a-simple-serial-job" title="Permalink to this headline">¶</a></h3>
+<p>In this section we will submit our first serial job on the server!
+We will create a simple job  that output a sentence using a job script <code class="docutils literal notranslate"><span class="pre">simple_job.bash</span></code>.</p>
+<ol class="arabic">
+<li><p>Create a file <code class="docutils literal notranslate"><span class="pre">simple_job.bash</span></code> on your computer, this will be your job script that we will submit later to compute canada.</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH --time=00:01:00</span>
+<span class="c1">#SBATCH --account=rrg-pbellec</span>
+<span class="n">echo</span> <span class="s1">&#39;Hello HPC world !&#39;</span>
+<span class="n">sleep</span> <span class="mi">5</span><span class="n">s</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> specify what options you want to give to slurm: <code class="docutils literal notranslate"><span class="pre">--time</span></code> is the duration of the job and <code class="docutils literal notranslate"><span class="pre">--account</span></code> specifies your organisation (usually your supervisor).
+You can add lot of informations there, just check the <a class="reference external" href="https://slurm.schedmd.com/sbatch.html">online documentation</a>.</p>
+</li>
+<li><p>Transfer this file from your computer to the server with <a class="reference external" href="https://linux.die.net/man/1/rsync">rsync</a>.
+You can also use <a class="reference external" href="https://docs.computecanada.ca/wiki/Transferring_data">sftp</a> if you want to encrypt what you are sending.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync -rlt --progress simple_job.bash beluga.computecanada.ca:~/projects/rrg-pbellec/&lt;user_name&gt;/
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>An important practice is to use your home directory inside the lab group <code class="docutils literal notranslate"><span class="pre">def-xxx</span></code> like above.
+If you store data in the root directory at <code class="docutils literal notranslate"><span class="pre">~</span></code>, you will run out of memory fast because <a class="reference external" href="https://docs.computecanada.ca/wiki/Storage_and_file_management">you have just 47GB in there</a>.</p>
+</div>
+</li>
+<li><p>Submit the job script with SLURM,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch simple_job.bash
+</pre></div>
+</div>
+</li>
+<li><p>To check the status of the job in the queue (time remaining, finish status etc..) you can type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue -u &lt;user_name&gt;
+</pre></div>
+</div>
+</li>
+<li><p>When it is done, the output will be available in a file called <code class="docutils literal notranslate"><span class="pre">slurm-&lt;id_of_job&gt;.out</span></code>.
+Check that the sentence <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">HPC</span> <span class="pre">world</span> <span class="pre">!</span></code> indeed appears there.</p></li>
+</ol>
+</div>
+<div class="section" id="launch-a-parrallelized-in-a-containerized-app">
+<h3>Launch a parrallelized in a containerized app<a class="headerlink" href="#launch-a-parrallelized-in-a-containerized-app" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://docs.docker.com/">Docker</a> is a common and powerfull tool to bundle or “containerize” application into a virtual environment.
+This will help you to deploy and share easilly your work, without worrying about the reproducibility of the environment.
+You can’t use docker on HPCs because you need admin rights to run it, but <a class="reference external" href="http://singularity.lbl.gov/">singularity</a> is allowed.</p>
+<p>Before continuing this tutorial, you should <a class="reference external" href="https://singularity.lbl.gov/install-linux">install the latest singularity</a> on your computer.</p>
+<ol class="arabic">
+<li><p>Create a single python script <code class="docutils literal notranslate"><span class="pre">par_job.py</span></code> that will output number from <span class="math notranslate nohighlight">\(a\)</span> to <span class="math notranslate nohighlight">\(b\)</span>, every 10s.</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">])):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>To make sure it is working, type <code class="code docutils literal notranslate"><span class="pre">python</span> <span class="pre">par_job.py</span> <span class="pre">1</span> <span class="pre">10</span></code>.</p>
+</li>
+<li><p>Pull a container from <a class="reference external" href="https://singularity-hub.org/">shub</a> so you can use it to launch your script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity pull --name anaconda3.simg shub://mjstealey/anaconda3
+</pre></div>
+</div>
+</li>
+<li><p>Test your script inside the container</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity --quiet <span class="nb">exec</span> anaconda3.simg python par_job.py <span class="m">1</span> <span class="m">10</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, singularity will mount your home inside the container. You can check that <code class="docutils literal notranslate"><span class="pre">par_job.py</span></code> is indeed inside the container:
+<code class="code docutils literal notranslate"><span class="pre">singularity</span> <span class="pre">--quiet</span> <span class="pre">shell</span> <span class="pre">anaconda3.simg</span> <span class="pre">ls</span></code></p>
+</div>
+<ol class="arabic" start="4">
+<li><p>Because the jobs will launch in parrallel, we need to specify the parameters for each task.
+One way of doing it is putting all the job parameters inside a file <code class="docutils literal notranslate"><span class="pre">params</span></code>, where each line is one task.
+Here we will have 10 independent tasks, each running a loop from <span class="math notranslate nohighlight">\(n+1\)</span> to <span class="math notranslate nohighlight">\(n+10\)</span>.</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">10</span>
+<span class="mi">11</span> <span class="mi">20</span>
+<span class="mi">21</span> <span class="mi">30</span>
+<span class="mi">31</span> <span class="mi">40</span>
+<span class="mi">41</span> <span class="mi">50</span>
+<span class="mi">51</span> <span class="mi">60</span>
+<span class="mi">61</span> <span class="mi">70</span>
+<span class="mi">71</span> <span class="mi">80</span>
+<span class="mi">81</span> <span class="mi">90</span>
+<span class="mi">91</span> <span class="mi">100</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p>Now, transfer the singularity image the python script and the parameters file from your computer to beluga <code class="docutils literal notranslate"><span class="pre">~/project/rrg-pbellec/&lt;user_name&gt;/</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rsync -rlt --progress anaconda3.simg par_job.py params beluga.computecanada.ca:~/projects/rrg-pbellec/&lt;user_name&gt;/
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="5">
+<li><p>We will submit a whole batch of jobs with just one script <code class="docutils literal notranslate"><span class="pre">simple_ar_job.bash</span></code> using the <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs#Array_job">job array</a> mechanism.
+This will allows us to run our application in parrallel among many nodes on computecanada.</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span>#!/bin/bash
+
+#SBATCH --time=00:20:00
+#SBATCH --account=rrg-pbellec
+#SBATCH --array=1-10
+
+module load singularity/3.4
+PARAMS=$(cat params | head -n $SLURM_ARRAY_TASK_ID| tail -n 1)
+echo $PARAMS
+
+singularity --quiet exec -B ~/projects/rrg-pbellec/&lt;user_name&gt;/:/scripts anaconda3.simg python /scripts/par_job.py ${PARAMS[0]} ${PARAMS[1]}
+</pre></div>
+</td></tr></table></div>
+<p>The line <code class="code docutils literal notranslate"><span class="pre">#SBATCH</span> <span class="pre">--array=1-10</span></code> tells you that this is a <code class="docutils literal notranslate"><span class="pre">job</span> <span class="pre">array</span></code> and you specified here that you will run 10 parrallel jobs.
+Using <code class="code docutils literal notranslate"><span class="pre">--array=1-10%2</span></code> you said that no more than 2 jobs will run in parrallel, <code class="code docutils literal notranslate"><span class="pre">--array=1-10:2</span></code> is equivalent to <code class="code docutils literal notranslate"><span class="pre">--array=1,3,5,7,9</span></code>.
+<code class="code docutils literal notranslate"><span class="pre">PARAMS=$(cat</span> <span class="pre">params</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">$SLURM_ARRAY_TASK_ID|</span> <span class="pre">tail</span> <span class="pre">-n</span> <span class="pre">1)</span></code> is used to read all the parameters that you want to pass to the python script from the file <code class="docutils literal notranslate"><span class="pre">params</span></code>.
+Take care of the folder mount there, <code class="code docutils literal notranslate"><span class="pre">singularity</span> <span class="pre">--quiet</span> <span class="pre">exec</span> <span class="pre">-B</span> <span class="pre">~/projects/rrg-pbellec/&lt;user_name&gt;/:/scripts</span></code>, so the directory on your host
+<code class="docutils literal notranslate"><span class="pre">~/projects/rrg-pbellec/&lt;user_name&gt;/</span></code> is available inside the container at <code class="docutils literal notranslate"><span class="pre">/scripts</span></code>.</p>
+</li>
+<li><p>Now you can submit the script to SLURM!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch simple_ar_job.sh
+</pre></div>
+</div>
+</li>
+<li><p>Verify that your jobs are indeed in the queue:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue -u &lt;user_name&gt;
+</pre></div>
+</div>
+</li>
+<li><p>When your jobs are running, check the process for one job in one of the node by running,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun --jobid &lt;job_id&gt; --pty htop -u &lt;user_name&gt;
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">&lt;job_id&gt;</span></code> is the id outputed by <code class="docutils literal notranslate"><span class="pre">squeue</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference external" href="https://slurm.schedmd.com/srun.html">srun</a> allows you to run a command on the worker
+node through <code class="code docutils literal notranslate"><span class="pre">--pty</span></code> argument , in this case <code class="docutils literal notranslate"><span class="pre">htop</span></code>.</p>
+</div>
+</li>
+<li><p>When the jobs are finished, check the log and all the files <code class="docutils literal notranslate"><span class="pre">slurm-&lt;jobid&gt;.out</span></code>.
+Each of them should contain the numbers ranging from <span class="math notranslate nohighlight">\(n+1\)</span> to <span class="math notranslate nohighlight">\(n+10\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="a-few-tips">
+<h2>A few tips<a class="headerlink" href="#a-few-tips" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="interactive-node">
+<h3>Interactive node<a class="headerlink" href="#interactive-node" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to run interactive jobs on HPCs using the <a class="reference external" href="https://slurm.schedmd.com/salloc.html">salloc</a> command.
+You can use the same parameters as for a sbatch script, for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salloc --account<span class="o">=</span>rrg-pbellec --time<span class="o">=</span><span class="m">00</span>:01:00<span class="p">;</span> <span class="nb">echo</span> <span class="s1">&#39;Hello HPC world !&#39;</span><span class="p">;</span> sleep 5s
+</pre></div>
+</div>
+<p>There is however a limit of 3h for this type of allocation.
+When you need to do some heavy, long duration jobs, you should use the <code class="code docutils literal notranslate"><span class="pre">sbatch</span></code> command described above.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Compute canada have good reasons to do constrain the time, interactive nodes are really for short duration development, compiling or debugging of jobs.
+When running interactive jobs (eg. for a notebook) it is likely that a lot of time will be spent not running anything, preventing other users to use resources.</p>
+</div>
+</div>
+<div class="section" id="debugging-your-application">
+<h3>Debugging your application<a class="headerlink" href="#debugging-your-application" title="Permalink to this headline">¶</a></h3>
+<p>It can be an hassle to debug code when using HPC: there is no default graphical forwarding for code editing or debugging.
+While it could be easier to use notebooks with an interactive node to debug some resssource intensive jobs, it is often better to have a combination of interactive/ non-interactive jobs with standard python files.
+Here are the diffrents steps you should follow:</p>
+<ol class="arabic simple">
+<li><p>Ask for an interactive node and test your job on a small data sample. If it completes with errors, debug your applicaton.</p></li>
+<li><p>Submit a batch script with <code class="code docutils literal notranslate"><span class="pre">sbatch</span></code> to ininterruptedly run the heavy part with the full data and, if possible, dump the intermediary results.</p></li>
+<li><p>When your heavy job completes, open an interactive node to explore these results, produce figures, etc…</p></li>
+</ol>
+<p>The following approach should:</p>
+<ul class="simple">
+<li><p>encourage you to write cleaner and reproducible code (structured modules and functions with tests as opposed to often messy linear coded notebook)</p></li>
+<li><p>save you a lot of time</p></li>
+<li><p>run multiple variations of your analysis/model in parallel, rather than waiting for the heavy-work notebook cell to complete before changing it to test something else</p></li>
+<li><p>avoid consuming our allocation for idle jobs, and ensure that we keep an acceptable priority for all members of the lab</p></li>
+</ul>
+</div>
+<div class="section" id="slurm-notifications-on-slack">
+<h3>SLURM notifications on slack<a class="headerlink" href="#slurm-notifications-on-slack" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to allow slack to send you notifications when a job is running, finished etc..</p>
+<p>First create a mail in slack in <code class="docutils literal notranslate"><span class="pre">preferences</span></code> under <code class="docutils literal notranslate"><span class="pre">messages</span> <span class="pre">and</span> <span class="pre">media</span></code> section.
+Then, you can use the provided email address to let SLURM send you notifications in slack (it will be sent by the <em>slackbot</em>).
+Just insert the following in your <code class="docutils literal notranslate"><span class="pre">.sh</span></code> job script:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --mail-user=XXXX@simexp.slack.com</span>
+<span class="c1">#SBATCH --mail-type=BEGIN</span>
+<span class="c1">#SBATCH --mail-type=END</span>
+</pre></div>
+</td></tr></table></div>
+<a class="reference internal image-reference" href="../_images/slackMail.png"><img alt="../_images/slackMail.png" src="../_images/slackMail.png" style="width: 400px;" /></a>
+</div>
+</div>
+<div class="section" id="questions">
+<h2>Questions ?<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<p>If you have any issues using compute canada, don’t hesitate to ask your questions on the SIMEXP lab slack in <code class="docutils literal notranslate"><span class="pre">#compute_canada</span></code> channel!</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="server_dl.html" class="btn btn-neutral float-right" title="Deep learning on a remote server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to simexp’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, SIMEXP Pierre Bellec
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
