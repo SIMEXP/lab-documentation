@@ -212,7 +212,7 @@ Debugging your application
 --------------------------
 
 It can be an hassle to debug code when using HPC: there is no default graphical forwarding for code editing or debugging.
-While it could be easier to use notebooks with an interactive node to debug some resssource intensive jobs, it is often better to have a combination of interactive/ non-interactive jobs with standard python files.
+While it could be easier to use notebooks with an interactive node to debug some resssource intensive jobs, it is often better to combine interactive/non-interactive jobs with standard python files.
 Here are the diffrents steps you should follow:
 
 1. Ask for an interactive node and test your job on a small data sample. If it completes with errors, debug your applicaton.
@@ -225,6 +225,45 @@ The following approach should:
 * save you a lot of time
 * run multiple variations of your analysis/model in parallel, rather than waiting for the heavy-work notebook cell to complete before changing it to test something else
 * avoid consuming our allocation for idle jobs, and ensure that we keep an acceptable priority for all members of the lab
+
+Managing large datasets
+----------------------
+
+If you are working on machine learning algorithms, you will certainly need to load one of the big dataset that are available on ``beluga``.
+One such dataset can be for exemple `cneuromod <https://docs.cneuromod.ca/en/2020-alpha2/>`_.
+
+You might want to directly load the dataset from the global filesystem (at ``~/projects/rrg-pbellec``) to feed your model, but this not a good idea.
+Indeed, this filesystem is slow, and because it is shared between many (many) users, you will likely expect lot of latency and slow I/O speed (and is the worth case data cache misses..).
+The best way to go is to sync the data ``~/projects/rrg-pbellec`` to the local compute node storage ``/localscratch/$USER.13055121.0`` (usually reffered as scratch space).
+The scratch path is different for each compute node, and because you will be allocated a new compute node each time, it is better to use the environment variable ``$SLURM_TMPDIR``.
+
+.. note::
+    The scratch space is just a SSD mounted directly on the compute node.
+    This is why it is much faster than the global filesystem (usually accessed through ``nfs``).
+
+.. warning::
+    One might expect a ``disk quota exceeded`` when transfering data to the scratch space.
+    this is because this SSD is shared between other users who have also accessed the compute node.
+    To avoid this, you can access a whole node to make sure you have access to all the local storage.
+    Check the `nodes characteristic <https://docs.computecanada.ca/wiki/B%C3%A9luga/en#Node_Characteristics>`_ to know how much scratch space it has.
+   
+
+Another important point is that if your dataset contains a lof of files (more than a thousand), ``rsync`` can take some time to build the file list.
+To reduce the transfer time, you will want to create this file list before using rsync. 
+Here is a concrete example with neuromod:
+
+.. code:: bash
+
+    # create the file liste before (outside of the SLURM script)
+    # in this example we include `sub-01` and `sub-02`, and exclude `.git`
+    cd ~/projects/rrg-pbellec/datasets/cneuromod_new/hcptrt/
+    find . -type f -printf '%h\0%d\0%p\n' | sort -t '\0' -n | awk -F'\0' '{print $3}' | grep -e sub-01 sub-02 | grep -v .git > ~/list_files_neuromod
+    # now use the below inside a SLURM script
+    mkdir $SLURM_TMPDIR/hcptrt
+    rysnc -avP --info=progress2 --files-from=~/list_files_neuromod projects/rrg-pbellec/datasets/cneuromod_new/hcptrt $SLURM_TMPDIR/hcptrt
+
+Finally, remember that if you need to transfer data from two different servers (for example from ``elm`` to ``beluga``), it is better to use `globus <https://docs.computecanada.ca/wiki/Globus>`_.
+Check the `compute canada documentation <https://docs.computecanada.ca/wiki/Storage_and_file_management>`_ for more details on this topic.
 
 SLURM notifications on slack
 ----------------------------
