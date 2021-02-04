@@ -76,7 +76,7 @@ You are now ready to use ``fmriprep-slurm``, with default commands:
 
     .. code:: bash
 
-        python3 fmriprep-slurm/fmriprep-slurm/main.py PATH/TO/BIDS/DATASET fmriprep
+        python3 $HOME/projects/rrg-pbellec/fmriprep-slurm/fmriprep-slurm/main.py PATH/TO/BIDS/DATASET fmriprep
 
 .. note::
 
