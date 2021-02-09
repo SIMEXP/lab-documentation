@@ -54,7 +54,6 @@ with the `fMRIPrep <https://fmriprep.org/en/stable/>`_ container, and to manage 
 `pybids <https://github.com/bids-standard/pybids>`__ caching mechanism.
 
 .. warning::
-
     You must check that `singularity <https://singularity.lbl.gov/>`__, the `fMRIPrep <https://fmriprep.org/en/stable/>`__
     container and `fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_ is available on the system, 
     this should be the case for `Béluga <https://docs.computecanada.ca/wiki/B%C3%A9luga/en>`_ .
@@ -71,9 +70,13 @@ but since it does not require lot of computation power, you can run it from the 
         $HOME/projects/rrg-pbellec/fmriprep-slurm/singularity_run.bash PATH/TO/BIDS/DATASET fmriprep
 
 .. note::
-
     There are lot of different options, check the `github page <https://github.com/SIMEXP/fmriprep-slurm>`_ for more informations.
     For example, you might want to add your email with the ``--email`` argument.
+
+.. warning::
+    We are asking the path to the dataset (without ``/`` at the end), not the content.
+    For example, this is valid ``datasets/ADHD200`` but this is not 
+    ``datasets/ADHD200/``.
 
 It should take some time since the filesystem is slow, grab a cup of coffee!
 
