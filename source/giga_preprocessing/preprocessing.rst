@@ -1,11 +1,11 @@
 Preprocesing datasets on Beluga with fMRIPrep
-=====================================================
-This document purpose is to allow anyone with basic shell experience to preprocess datasets that are stored on our compute canada allocation.
-We will specifically use `fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_, a python tool developped internally in the lab to automatically generate slurm files.
-It is carefully designed and optimized to run run the preprocessing.
+=============================================
+This document purpose is to allow anyone to preprocess datasets that are stored on the compute canada lab allocation.
+We will specifically use `fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_, a python tool developped internally in the lab to automatically
+generate `slurm <https://slurm.schedmd.com/sbatch.html>`_ files from a `BIDS <https://bids-specification.readthedocs.io/en/stable/>`_ dataset.
 
 `fMRIPrep <https://fmriprep.org/en/stable/>`_ is the pipeline that we use internally to preprocess 
-`BIDS <https://bids-specification.readthedocs.io/en/stable/>`_-compatible datasets.
+`BIDS <https://bids-specification.readthedocs.io/en/stable/>`__-compatible datasets.
 It uses a combination of tools from well-known software packages, 
 including `FSL <https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/>`_, 
 `ANTs <https://stnava.github.io/ANTs/>`_, `FreeSurfer <https://surfer.nmr.mgh.harvard.edu/>`_ and `AFNI <https://afni.nimh.nih.gov/>`_.
@@ -16,19 +16,20 @@ Pre-requisites
 ::::::::::::::
 * Basic knowledge of `preprocessing pipeline <https://fsl.fmrib.ox.ac.uk/fslcourse/online_materials.html#Prep>`_
 * Our tutorial on :doc:`../tutorials/hpc`
-* Basic knowledge on containerized app (Docker, singularity)
+* Understanding containerized app (Docker, singularity)
 
 What will you learn ?
 :::::::::::::::::::::
 * Use fmriprep to preprocess a dataset
-* Optimize a slurm file for big data
+* Gain knowledge on HPC optimization for big data
 
 Preparation steps
 :::::::::::::::::
 
 Freesrufer license
 ------------------
-As part of the fMRIPrep pipeline, `Freesurfer <https://surfer.nmr.mgh.harvard.edu/fswiki>`_ is mostly used for the reconstruction steps.
+As part of the `fMRIPrep <https://fmriprep.org/en/stable/>`_ pipeline, `Freesurfer <https://surfer.nmr.mgh.harvard.edu/fswiki>`__ 
+is mostly used for the reconstruction steps.
 It is free, but it requires a license to be used so you will need one before everything else.
 
 To obtain a freesurfer license, `register in the website <https://surfer.nmr.mgh.harvard.edu/registration.html>`_.
@@ -40,62 +41,81 @@ Once downloaded, you can move the file to beluga:
 
         scp ~/Downloads/license.txt beluga.computecanada.ca:~/.freesurfer.txt
 
-Python dependencies
-------------------
+Software environment
+--------------------
 
-`fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_ have some dependencies to met before using it.
-In order to use it, we will create a `python virtual environment <https://docs.python.org/3/tutorial/venv.html>`_
-with `pybids <https://bids-standard.github.io/pybids/>`_ (to manage a BIDS compatible dataset)
+`fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_ depends on `pybids <https://bids-standard.github.io/pybids/>`_ 
+(to manage a BIDS compatible dataset)
 and `templateflow <https://www.templateflow.org/python-client/0.5.0rc1/api/templateflow.api.html>`_
 (a repository holding multiple templates for neuroimaging).
 
-1. Connect to beluga and go into your project home:
+We use `singularity <https://singularity.lbl.gov/>`_ to make sure that the python dependencies are in agreement
+with the `fMRIPrep <https://fmriprep.org/en/stable/>`_ container, and to manage the 
+`pybids <https://github.com/bids-standard/pybids>`__ caching mechanism.
 
-    .. code:: bash
+.. warning::
 
-        ssh beluga.computecanada.ca
-        cd $HOME/projects/rrg-pbellec/$USER
-
-2. Create a virtualenv and install all fmriprep-slurm dependencies:
-
-    .. code:: bash
-        
-        virtualenv --python=python3.6 .virtualenvs/fmriprep-slurm
-        python3 -m pip install -r $HOME/projects/rrg-pbellec/fmriprep-slurm/requirements.txt
+    You must check that `singularity <https://singularity.lbl.gov/>`__, the `fMRIPrep <https://fmriprep.org/en/stable/>`__
+    container and `fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_ is available on the system, 
+    this should be the case for `Béluga <https://docs.computecanada.ca/wiki/B%C3%A9luga/en>`_ .
 
 Generating the slurm files
 ::::::::::::::::::::::::::
-Make sure that you have followed the :ref:`Preparation steps`.
-You should be able to active the virtual environment:
+A convenience script is available to help you run the `singularity <https://singularity.lbl.gov/>`__ command 
+with `fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_.
+Ideally, you would run the command from a compute node, 
+but since it does not require lot of computation power, you can run it from the login node:
 
     .. code:: bash
 
-        source $HOME/projects/rrg-pbellec/$USER/.virtualenvs/fmriprep-slurm/bin/activate
-
-You are now ready to use ``fmriprep-slurm``, with default commands:
-
-    .. code:: bash
-
-        python3 $HOME/projects/rrg-pbellec/fmriprep-slurm/fmriprep-slurm/main.py PATH/TO/BIDS/DATASET fmriprep
+        $HOME/projects/rrg-pbellec/fmriprep-slurm/singularity_run.bash PATH/TO/BIDS/DATASET fmriprep
 
 .. note::
 
     There are lot of different options, check the `github page <https://github.com/SIMEXP/fmriprep-slurm>`_ for more informations.
+    For example, you might want to add your email with the ``--email`` argument.
+
+It should take some time since the filesystem is slow, grab a cup of coffee!
 
 Submitting the preprocesing jobs
-:::::::::::::::::::::::::::::::::
-Once you checked the content of the slurm script, you are now ready to submit the jobs.
+::::::::::::::::::::::::::::::::
+If everything worked as expected, all the slurm files should be inside a new folder ``PATH/TO/BIDS/DATASET/.slurm``. 
+There should be one slurm script per subject ``sub``, allowing you to preprocess them in parrallel.
 
-You can simply run
+Once you checked the content of the slurm scripts, you are now ready to submit the jobs with ``sbatch``:
 
     .. code:: bash
 
-        sbatch PATH/TO/FMRIPREP-SLURM-SBATCH-FILE
+        sbatch PATH/TO/BIDS/DATASET/.slurm/smriprep_sub-*.sh
 
-.. note::
-    It is important to check for the time and hardware requests, because this impacts our allocation even if the job fails.
+.. warning::
+    It is important to check specifically for the time and hardware requests in the slurm scripts, 
+    because this impacts our allocation even if the job fails.
+
+Checking the output
+:::::::::::::::::::
+
+Output and error logs
+---------------------
+Once the jobs are finished, the output ``smriprep_sub-*.out`` and error ``smriprep_sub-*.err`` logs should be under the same folder as previously ``PATH/TO/BIDS/DATASET/.slurm``.
+
+Double-check your input dataset, and if you have any further issues, contact one of the data admins.
+
+fMRIPrep outputs
+----------------
+A first file available is the ``resource_monitor.json`` under ``/scratch/$USER/``, to help you track the usage for each subject.
+
+All the preprocessing outputs should be inside ``PATH/TO/BIDS/DATASET/derivatives/fmriprep``.
+
+Finally, if fMRIPrep unexpectedly crashed, you can check its working directory in ``/scratch/$USER/smriprep_sub-XXXX.workdir``.
+
 
 To go further
 :::::::::::::
 Look at the `fMRIPrep <https://fmriprep.org/en/stable/>`_ documentation, 
-and more specifically the section on `singularity <https://fmriprep.org/en/stable/singularity.html>`_.
+and more specifically the section on `singularity <https://fmriprep.org/en/stable/singularity.html>`__.
+
+Questions ?
+:::::::::::
+
+If you have any issues using compute canada, don't hesitate to ask your questions on the SIMEXP lab slack in ``#compute_canada`` channel!
