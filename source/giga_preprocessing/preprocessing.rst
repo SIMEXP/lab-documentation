@@ -108,7 +108,7 @@ fMRIPrep outputs
 ----------------
 A first file available is the ``resource_monitor.json`` under ``/scratch/$USER/``, to help you track the usage for each subject.
 
-All the preprocessing outputs should be inside ``PATH/TO/BIDS/DATASET/derivatives/fmriprep``.
+All the preprocessing outputs should also be inside ``/scratch/$USER/fmriprep``.
 
 Finally, if fMRIPrep unexpectedly crashed, you can check its working directory in ``/scratch/$USER/smriprep_sub-XXXX.workdir``.
 
