@@ -19,6 +19,13 @@ Please help us write this documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: Giga Preprocessing
+
+   giga_preprocessing/preprocessing.rst
+   giga_preprocessing/qc.rst
+
+.. toctree::
+   :maxdepth: 1
    :caption: Tutorials
 
    tutorials/hpc.rst
@@ -27,7 +34,6 @@ Please help us write this documentation
    tutorials/git_crypt.rst
    tutorials/submit_pr.rst
    tutorials/ssh.rst
-   tutorials/fmriprep.rst
 
 Indices and tables
 ==================
