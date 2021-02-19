@@ -71,7 +71,8 @@ but since it does not require lot of computation power, you can run it from the 
 
 .. note::
     There are lot of different options, check the `github page <https://github.com/SIMEXP/fmriprep-slurm>`_ for more informations.
-    For example, you might want to add your email with the ``--email`` argument.
+    For example, you might want to add additionnal fmrirep command to enable ICA_AROMA and disable FreeSurfer 
+    reconstruction with ``--fmriprep-args \"--use-aroma --fs-no-reconall\"``.
 
 .. warning::
     We are asking the path to the dataset (without ``/`` at the end), not the content.
