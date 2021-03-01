@@ -26,12 +26,12 @@ What will you learn ?
         ssh beluga.computecanada.ca
         cd $HOME/projects/rrg-pbellec/$USER
 
-2. Create a virtualenv and install all fmriprep-slurm dependencies:
+2. Create a virtualenv and install all fmriprep-qc dependencies:
 
     .. code:: bash
         
-        virtualenv --python=python3.6 .virtualenvs/fmriprep-slurm
-        python3 -m pip install -r $HOME/projects/rrg-pbellec/fmriprep-slurm/requirements.txt
+        virtualenv --python=python3.6 .virtualenvs/fmriprep-qc
+        python3 -m pip install -r $HOME/projects/rrg-pbellec/fmriprep-qc/requirements.txt
 
 
 
