@@ -86,18 +86,16 @@ It should take some time since the filesystem is slow, grab a cup of coffee!
 
 Submitting the preprocesing jobs
 ::::::::::::::::::::::::::::::::
-If everything worked as expected, all the slurm files should be inside a new folder ``PATH/TO/BIDS/DATASET/.slurm``. 
+If everything worked as expected, all the slurm files should be inside a new folder ``PATH/TO/BIDS/DATASET/.slurm``.
 There should be one slurm script per subject ``sub``, allowing you to preprocess them in parrallel.
 
-Once you checked the content of the slurm scripts, you are now ready to submit the jobs with ``sbatch``:
+Check the content of the slurms scripts, and more specifically the time and hardware requests since it impacts our allocation usage even if the job fails.
+
+You are now ready to submit the jobs with ``sbatch``:
 
     .. code:: bash
 
         sbatch PATH/TO/BIDS/DATASET/.slurm/smriprep_sub-*.sh
-
-.. warning::
-    It is important to check specifically for the time and hardware requests in the slurm scripts, 
-    because this impacts our allocation even if the job fails.
 
 Checking the output
 :::::::::::::::::::
@@ -107,6 +105,10 @@ Output and error logs
 Once the jobs are finished, the output ``smriprep_sub-*.out`` and error ``smriprep_sub-*.err`` logs should be under the same folder as previously ``PATH/TO/BIDS/DATASET/.slurm``.
 
 Double-check your input dataset, and if you have any further issues, contact one of the data admins.
+
+.. warning::
+    It is possible that you encounter BIDS errors due to bad pybids caching behavious, because the filesystem is slow on Beluga.
+    In this case, you should re-run the tool as described in :ref:`Generating the slurm files` with the ```--force-reindex``` argument.
 
 fMRIPrep outputs
 ----------------
