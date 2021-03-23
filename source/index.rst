@@ -7,6 +7,13 @@ Please help us write this documentation
 
 .. toctree::
    :maxdepth: 1
+   :caption: Community
+
+   community/manifesto.md
+   community/coc.md
+
+.. toctree::
+   :maxdepth: 1
    :caption: Compute canada
 
    compute_canada/starter.md
