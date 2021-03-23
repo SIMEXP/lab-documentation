@@ -57,7 +57,9 @@ Now you can log-in again, but this time by forwarding your local port:
 
     .. code:: bash
 
-        ssh -L 8050:localhost:8050 beluga.computecanada.ca
+        ssh -L 8050:localhost:8050 username@beluga.computecanada.ca
+        
+Where ``username`` is from the compute canada organization.
 
 Make sure that you have followed the :ref:`Preparation steps`, and activate your virtual environment:
 
