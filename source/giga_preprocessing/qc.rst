@@ -66,12 +66,26 @@ Make sure that you have followed the :ref:`Preparation steps`, and activate your
     .. code:: bash
 
         source $HOME/projects/rrg-pbellec/$USER/.virtualenvs/fmriprep-qc/bin/activate
+        
+.. warning::
+    If at this stage dash is still nor correctly installed, you can use our virtual environment.
+    First deactivate your current environment, after you can load the one on beluga:
+    .. code:: bash
+
+    deactivate
+    source $HOME/projects/rrg-pbellec/fmriprep-qc/fmriprep-qc-env/bin/activate
+
+You can change the port if needed with the ``--port`` argument, but remember to forward this new port when connecting to beluga.
+
 
 You can now start the http server:
 
     .. code:: bash
 
         python3 ~/projects/rrg-pbellec/fmriprep-qc/fmriprep-qc/main.py PATH/TO/FMRIPREP/OUTPUT
+     
+.. warning::
+    Point to the ``fmriprep`` directory, not `freesurfer`, for example ``PATH/TO/FMRIPREP/fmriprep``
 
 Do the qc
 :::::::::
