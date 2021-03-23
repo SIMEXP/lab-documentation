@@ -38,6 +38,7 @@ You will first need to prepare a working environment to use `fmriprep-qc <https:
     .. code:: bash
         
         virtualenv --python=python3.6 .virtualenvs/fmriprep-qc
+        source $HOME/projects/rrg-pbellec/$USER/.virtualenvs/fmriprep-qc/bin/activate
         python3 -m pip install -r $HOME/projects/rrg-pbellec/fmriprep-qc/requirements.txt
 
 Start the qc server
