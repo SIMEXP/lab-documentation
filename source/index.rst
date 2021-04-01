@@ -17,6 +17,7 @@ Please help us write this documentation
    :caption: Compute canada
 
    compute_canada/starter.md
+   compute_canada/tape.rst
 
 .. toctree::
    :maxdepth: 1
