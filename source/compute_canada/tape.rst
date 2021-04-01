@@ -24,6 +24,7 @@ The first thing you will need to do is to ``tar`` the folder you want to archive
 This is intended to reduce the number of files, since a tape system is not meant to store deep file tree.
 
 .. code:: bash
+    
     cd /path/to/DATA
     tar -czf /nearline/ctb-pbellec/DATA.tar.gz .
 
