@@ -80,8 +80,8 @@ You can now start the http server:
     
         .. code:: bash
 
-        module load singularity/3.6
-        singularity run -B PATH/TO/FMRIPREP/OUTPUT:/input $HOME/projects/rrg-pbellec/containers/fmriprep-qc.simg
+            module load singularity/3.6
+            singularity run -B PATH/TO/FMRIPREP/OUTPUT:/input $HOME/projects/rrg-pbellec/containers/fmriprep-qc.simg
      
 .. warning::
     Point to the ``fmriprep`` directory, not `freesurfer`, for example ``PATH/TO/FMRIPREP/fmriprep``
