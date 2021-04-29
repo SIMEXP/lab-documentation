@@ -22,6 +22,7 @@ Archive the data and move into the tape
 ---------------------------------------
 The first thing you will need to do is to ``tar`` the folder you want to archive.
 This is intended to reduce the number of files, since a tape system is not meant to store deep file tree.
+In the following example, ``DATA`` stands for the directory you want to tape:
 
 .. code:: bash
     
