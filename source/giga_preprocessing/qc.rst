@@ -24,22 +24,8 @@ Preparation steps
 Software environment
 --------------------
 
-You will first need to prepare a working environment to use `fmriprep-qc <https://github.com/SIMEXP/fmriprep-qc>`_.
-
-1. Connect to beluga and go into your project home:
-
-    .. code:: bash
-
-        ssh beluga.computecanada.ca
-        cd $HOME/projects/rrg-pbellec/$USER
-
-2. Create a virtualenv and install all `fmriprep-qc <https://github.com/SIMEXP/fmriprep-qc>`_ dependencies:
-
-    .. code:: bash
-        
-        virtualenv --python=python3.6 .virtualenvs/fmriprep-qc
-        source $HOME/projects/rrg-pbellec/$USER/.virtualenvs/fmriprep-qc/bin/activate
-        python3 -m pip install -r $HOME/projects/rrg-pbellec/fmriprep-qc/requirements.txt
+Everything was installed on beluga inside a singularity container.
+Double check that the container indeed exists at this path: ``$HOME/projects/rrg-pbellec/containers/fmriprep-qc.simg``.
 
 Start the qc server
 :::::::::::::::::::
@@ -61,40 +47,30 @@ Now you can log-in again, but this time by forwarding your local port:
         
 Where ``username`` is from the compute canada organization.
 
-Make sure that you have followed the :ref:`Preparation steps`, and activate your virtual environment:
+Make sure that you have followed the :ref:`Preparation steps`, and spawn the http server:
 
     .. code:: bash
 
-        source $HOME/projects/rrg-pbellec/$USER/.virtualenvs/fmriprep-qc/bin/activate
+        module load singularity/3.6
+        singularity run -B PATH/TO/FMRIPREP/OUTPUT:/input $HOME/projects/rrg-pbellec/containers/fmriprep-qc.simg --dataset-name MY_DATASET
 
-You can change the port if needed with the ``--port`` argument, but remember to forward this new port when connecting to beluga.
-
-You can now start the http server:
-
-    .. code:: bash
-
-        python3 ~/projects/rrg-pbellec/fmriprep-qc/fmriprep-qc/main.py PATH/TO/FMRIPREP/OUTPUT
-        
 .. warning::
-    If at this stage ``Dash`` is still not correctly installed, you can use our container:
+    Point to the ``fmriprep`` directory, not `freesurfer`, for example ``ccna_raw_data_2020/derivatives/fmriprep/fmriprep``
     
+.. note::
+    You can change the port if needed with the ``--port`` argument, but remember to also forward this new port when connecting to beluga.
+    For example:
         .. code:: bash
-
-            module load singularity/3.6
-            singularity run -B PATH/TO/FMRIPREP/OUTPUT:/input $HOME/projects/rrg-pbellec/containers/fmriprep-qc.simg
-     
-.. warning::
-    Point to the ``fmriprep`` directory, not `freesurfer`, for example ``PATH/TO/FMRIPREP/fmriprep``
+        
+            ssh -L PORT:localhost:PORT username@beluga.computecanada.ca
 
 Do the qc
 :::::::::
 
-If everything worked as expected, open `http://127.0.0.1:8050/ <http://127.0.0.1:8050/>`_ in your favourite browser.
+If everything worked as expected, open `http://127.0.0.1:8050/ <http://127.0.0.1:8050/>`_ in your favourite browser (or ctrl-click on the given link in the console output).
 
-.. note::
-    You can change the port if needed with the ``--port`` argument, but remember to forward this new port when connecting to beluga.
-
-(help needed here to explain how to qc)
+You can click on the ``pass``, ``maybe``, or ``fail`` button to save the current status of the QC in a json file, to continue the QC later.
+The json file is saved under ``$HOME/.fmriprep-qc/${USER}_DATASET.json``, use it to share your results with others.
 
 Questions ?
 :::::::::::
