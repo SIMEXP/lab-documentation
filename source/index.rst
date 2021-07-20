@@ -42,6 +42,7 @@ Please help us write this documentation
    tutorials/git_crypt.rst
    tutorials/submit_pr.rst
    tutorials/ssh.rst
+   tutorials/notebook_venv.rst
 
 Indices and tables
 ==================

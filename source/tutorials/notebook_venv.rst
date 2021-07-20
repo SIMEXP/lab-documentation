@@ -7,6 +7,11 @@ When using `python virtual environment <https://docs.python.org/3/library/venv.h
 
 This tutorial is intended to guide you through the different steps to make your venv compatible.
 
+.. Note::
+  If you want to share your work to others ine the group, we advice you to instead create a singularity image.
+  Check our tutorial on using a singularity image remotely for more information :doc:`server_dl`.
+  The virtual environment was not really designed to be shared.
+
 Pre-requisites
 ::::::::::::::
 * Basics use of Linux (cmd line, shell scripting)
@@ -57,7 +62,7 @@ Switch the notebook kernel to MY_NEW_ENV.
 
 .. Note::
   You can check the list of existing kernel on your computer with the command:
-  
+
   .. code:: bash
   
     jupyter kernelspec list
