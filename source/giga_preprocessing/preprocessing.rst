@@ -58,6 +58,15 @@ with the `fMRIPrep <https://fmriprep.org/en/stable/>`_ container, and to manage 
     container and `fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_ is available on the system, 
     this should be the case for `Béluga <https://docs.computecanada.ca/wiki/B%C3%A9luga/en>`_ .
 
+Templateflow
+------------
+
+In order to give templateflow access to your directory, you will have to manually create it on your ``home``.
+
+.. code:: bash
+
+    mkdir -p /home/$USER/.cache/templateflow
+
 Generating the slurm files
 ::::::::::::::::::::::::::
 A convenience script is available to help you run the `singularity <https://singularity.lbl.gov/>`__ command 
