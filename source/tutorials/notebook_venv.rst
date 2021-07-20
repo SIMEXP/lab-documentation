@@ -30,7 +30,7 @@ Obviously if you already have one you can skip this section.
 
 .. code:: bash
 
-  mkdir ~/.virtualenvs (if you don't have an existing environment folder)
+  mkdir ~/.virtualenvs
   python3 -m venv ~/.virtualenvs/MY_NEW_ENV
 
 Then we will activate the environment:
