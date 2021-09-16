@@ -18,4 +18,4 @@ https://github.com/AstrobioMike/binder-unix-intro
 Questions ?
 :::::::::::
 
-If you have any issues using compute canada, don’t hesitate to ask your questions on the SIMEXP lab slack in #shell channel!
+If you have any issues using the UNIX command line, don’t hesitate to ask your questions on the SIMEXP lab slack in #shell channel!
