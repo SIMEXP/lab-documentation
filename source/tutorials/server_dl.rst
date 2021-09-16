@@ -6,7 +6,7 @@ It is now relatively easy to have a ready to use environment for your applicatio
 
 Pre-requisites
 ::::::::::::::
-* Basics use of Linux (cmd line, shell scripting, ssh)
+* Our tutorial on :doc:`unix_intro`
 * Our tutorial on :doc:`ssh`
 * Basic knowledge on containerized app (Docker, singularity)
 
@@ -54,7 +54,7 @@ Upload your data and connect to the GPU server
     .. note::
         We are using the server ``meleze`` which has a GTX 1070, of course you can choose any server you have access to.
 
-2.  Connect to ``meleze``
+3.  Connect to ``meleze``
 
     .. code-block:: bash
 

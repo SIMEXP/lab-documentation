@@ -8,7 +8,7 @@ Don't hesitate to check the `compute canada website <https://docs.computecanada.
 
 Pre-requisites
 ::::::::::::::
-* Basics use of Linux (cmd line, shell scripting)
+* Our tutorial on :doc:`unix_intro`
 * Our tutorial on :doc:`ssh`
 * Basic knowledge on containerized app (Docker, singularity)
 

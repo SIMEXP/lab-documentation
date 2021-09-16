@@ -10,7 +10,7 @@ You will not need to install anything since it is already installed by default o
 
 Pre-requisites
 ::::::::::::::
-* Basics use of Linux (cmd line)
+* Our tutorial on :doc:`unix_intro`
 
 What will you learn ?
 :::::::::::::::::::::

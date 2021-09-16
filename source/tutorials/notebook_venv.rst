@@ -14,7 +14,7 @@ This tutorial is intended to guide you through the different steps to make your 
 
 Pre-requisites
 ::::::::::::::
-* Basics use of Linux (cmd line, shell scripting)
+* Our tutorial on :doc:`unix_intro`
 * Knowledge on python packages (pip)
 
 What will you learn ?
