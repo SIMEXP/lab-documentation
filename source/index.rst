@@ -36,6 +36,7 @@ Please help us write this documentation
    :maxdepth: 1
    :caption: Tutorials
 
+   tutorials/unix_intro.rst
    tutorials/hpc.rst
    tutorials/server_dl.rst
    tutorials/binder.rst
