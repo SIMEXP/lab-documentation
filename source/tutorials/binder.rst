@@ -1,5 +1,5 @@
-A Binder tutorial
-=================
+Executable environment on the cloud with Binder
+===============================================
 
 Binder allows you to execute and share notebooks to anyone using the web.
 The way `Binder <https://github.com/jupyterhub/binderhub>`_ download the notebooks is through a GitHub repo, where the user should specify the environment to run them.
