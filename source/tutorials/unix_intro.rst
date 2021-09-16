@@ -14,3 +14,8 @@ What will you learn ?
 
 It is an interactive environment using Binder, you just need to click on the launch binder button.
 https://github.com/AstrobioMike/binder-unix-intro
+
+Questions ?
+:::::::::::
+
+If you have any issues using compute canada, don’t hesitate to ask your questions on the SIMEXP lab slack in #shell channel!
