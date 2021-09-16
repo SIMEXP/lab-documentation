@@ -30,10 +30,10 @@ Obviously if you already have one you can skip this section.
 
 .. code:: bash
 
-  mkdir ~/.virtualenvs (if you don't have an existing environment folder)
+  mkdir ~/.virtualenvs
   python3 -m venv ~/.virtualenvs/MY_NEW_ENV
 
-Then we will activate the environment:
+Then we will activate the environment and install the dependencies that you need for your notebook:
 
 .. code:: bash
 
@@ -42,7 +42,12 @@ Then we will activate the environment:
 
 Adding the environment to jupyter
 :::::::::::::::::::::::::::::::::
+If you are inside a virtual environment at this step, you will first need to `deactivate` it:
 
+.. code:: bash
+
+  deactivate
+  
 The next step is to add a new `ipython kernel <https://ipython.org/>`_ which points to your environment.
 You can see an ipython kernel as an execution backend for jupyter.
 

@@ -14,7 +14,7 @@ If it is the first time you are using our tool, you should go through the :ref:`
 
 Pre-requisites
 ::::::::::::::
-* Basic knowledge of `preprocessing pipeline <https://fsl.fmrib.ox.ac.uk/fslcourse/online_materials.html#Prep>`_
+* Basic knowledge of `preprocessing pipeline <https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html>`_
 * Our tutorial on :doc:`../tutorials/hpc`
 * Understanding containerized app (Docker, singularity)
 
