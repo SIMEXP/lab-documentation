@@ -5,7 +5,7 @@ We will specifically use `fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slu
 generate `slurm <https://slurm.schedmd.com/sbatch.html>`_ files from a `BIDS <https://bids-specification.readthedocs.io/en/stable/>`_ dataset.
 
 `fMRIPrep <https://fmriprep.org/en/stable/>`_ is the pipeline that we use internally to preprocess 
-`BIDS <https://bids-specification.readthedocs.io/en/stable/>`__-compatible datasets.
+`BIDS <https://bids-specification.readthedocs.io/en/stable/>`_-compatible datasets.
 It uses a combination of tools from well-known software packages, 
 including `FSL <https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/>`_, 
 `ANTs <https://stnava.github.io/ANTs/>`_, `FreeSurfer <https://surfer.nmr.mgh.harvard.edu/>`_ and `AFNI <https://afni.nimh.nih.gov/>`_.
@@ -43,7 +43,6 @@ Once downloaded, you can move the file to beluga:
 
 Software environment
 --------------------
-
 `fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_ depends on `pybids <https://bids-standard.github.io/pybids/>`_ 
 (to manage a BIDS compatible dataset)
 and `templateflow <https://www.templateflow.org/python-client/0.5.0rc1/api/templateflow.api.html>`_
@@ -60,12 +59,22 @@ with the `fMRIPrep <https://fmriprep.org/en/stable/>`_ container, and to manage 
 
 Templateflow
 ------------
-
 In order to give templateflow access to your directory, you will have to manually create it on your ``home``.
 
 .. code:: bash
 
     mkdir -p /home/$USER/.cache/templateflow
+
+BIDS validation
+---------------
+As lot of other neuroimaging tools, `fMRIPrep <https://fmriprep.org/en/stable/>`_ heavily relies on the `BIDS <https://bids-specification.readthedocs.io/en/stable/>`_ layout.
+It is then all natural to check if your input dataset is indeed `BIDS <https://bids-specification.readthedocs.io/en/stable/>`_ compliant, with a tool called
+`BIDS-validator <https://github.com/bids-standard/bids-validator>`.
+You don't need to install it as it is already available on Beluga, just run the following command:
+
+    .. code:: bash
+
+        singularity exec -B PATH/TO/BIDS/DATASET:/DATA /lustre03/project/6003287/containers/fmriprep-20.2.1lts.sif bids-validator /DATA 
 
 Generating the slurm files
 ::::::::::::::::::::::::::
@@ -95,7 +104,7 @@ It should take some time since the filesystem is slow, grab a cup of coffee!
 
 Submitting the preprocesing jobs
 ::::::::::::::::::::::::::::::::
-If everything worked as expected, all the slurm files should be inside a new folder ``PATH/TO/BIDS/DATASET/.slurm``.
+If everything worked as expected, all the slurm files should be inside a new folder under your scratch space ``SCRATCH/DATASET_NAME/UNIX_TIME/.slurm``.
 There should be one slurm script per subject ``sub``, allowing you to preprocess them in parrallel.
 
 Check the content of the slurms scripts, and more specifically the time and hardware requests since it impacts our allocation usage even if the job fails.
@@ -104,14 +113,14 @@ You are now ready to submit the jobs with ``sbatch``:
 
     .. code:: bash
 
-        sbatch PATH/TO/BIDS/DATASET/.slurm/smriprep_sub-*.sh
+        sbatch ${SCRATCH}/DATASET_NAME/UNIX_TIME/.slurm/smriprep_sub-*.sh
 
 Checking the output
 :::::::::::::::::::
 
 Output and error logs
 ---------------------
-Once the jobs are finished, the output ``smriprep_sub-*.out`` and error ``smriprep_sub-*.err`` logs should be under the same folder as previously ``PATH/TO/BIDS/DATASET/.slurm``.
+Once the jobs are finished, the output ``smriprep_sub-*.out`` and error ``smriprep_sub-*.err`` logs should be under the same folder as previously ``SCRATCH/DATASET_NAME/UNIX_TIME``.
 
 Double-check your input dataset, and if you have any further issues, contact one of the data admins.
 
@@ -121,11 +130,11 @@ Double-check your input dataset, and if you have any further issues, contact one
 
 fMRIPrep outputs
 ----------------
-A first file available is the ``resource_monitor.json`` under ``/scratch/$USER/``, to help you track the usage for each subject.
+A first file available is the ``resource_monitor.json`` under ``${SCRATCH}/DATASET_NAME/UNIX_TIME``, to help you track the usage for each subject.
 
-All the preprocessing outputs should also be inside ``/scratch/$USER/fmriprep``.
+All the preprocessing outputs should also be inside ``${SCRATCH}/DATASET_NAME/UNIX_TIME/fmriprep``.
 
-Finally, if fMRIPrep unexpectedly crashed, you can check its working directory in ``/scratch/$USER/smriprep_sub-XXXX.workdir``.
+Finally, if fMRIPrep unexpectedly crashed, you can check its working directory in ``${SCRATCH}/DATASET_NAME/UNIX_TIME/smriprep_sub-XXXX.workdir``.
 
 
 To go further
