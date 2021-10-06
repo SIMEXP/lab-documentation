@@ -78,13 +78,13 @@ You don't need to install it as it is already available on Beluga, just run the 
 
 Generating the slurm files
 ::::::::::::::::::::::::::
-A convenience script is available to help you run the `singularity <https://singularity.lbl.gov/>`__ command 
+A convenience script is available to help you run the `singularity <https://singularity.lbl.gov/>`_ command 
 with `fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_.
-Ideally, you would run the command from a compute node, 
-but since it does not require lot of computation power, you can run it from the login node:
+The following command run the script inside a compute node:
 
     .. code:: bash
 
+        salloc --account=rrg-pbellec --mem-per-cpu=2G --time=4:00:0 --cpus-per-task=2
         $HOME/projects/rrg-pbellec/fmriprep-slurm/singularity_run.bash PATH/TO/BIDS/DATASET fmriprep
 
 .. warning::
