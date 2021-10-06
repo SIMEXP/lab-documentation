@@ -69,7 +69,7 @@ BIDS validation
 ---------------
 As lot of other neuroimaging tools, `fMRIPrep <https://fmriprep.org/en/stable/>`_ heavily relies on the `BIDS <https://bids-specification.readthedocs.io/en/stable/>`_ layout.
 It is then all natural to check if your input dataset is indeed `BIDS <https://bids-specification.readthedocs.io/en/stable/>`_ compliant, with a tool called
-`BIDS-validator <https://github.com/bids-standard/bids-validator>`.
+`BIDS-validator <https://github.com/bids-standard/bids-validator>`_.
 You don't need to install it as it is already available on Beluga, just run the following command:
 
     .. code:: bash
