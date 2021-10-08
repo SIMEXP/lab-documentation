@@ -18,6 +18,7 @@ Please help us write this documentation
 
    compute_canada/starter.md
    compute_canada/tape.rst
+   compute_canada/hpc.rst
 
 .. toctree::
    :maxdepth: 1
@@ -37,7 +38,6 @@ Please help us write this documentation
    :caption: Tutorials
 
    tutorials/unix_intro.rst
-   tutorials/hpc.rst
    tutorials/server_dl.rst
    tutorials/binder.rst
    tutorials/git_crypt.rst
