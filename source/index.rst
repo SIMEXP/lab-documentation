@@ -37,6 +37,7 @@ Please help us write this documentation
    :maxdepth: 1
    :caption: Tutorials
 
+   tutorials/python.rst
    tutorials/unix_intro.rst
    tutorials/server_dl.rst
    tutorials/binder.rst

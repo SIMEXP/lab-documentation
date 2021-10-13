@@ -62,7 +62,7 @@ Cookiecutter template
 
 `Cookiecutter <https://github.com/cookiecutter/cookiecutter>`_ is a little command line utility to help you initialize a (python) project.
 
-If you already initialized a project on Béluga with :doc:`project.md`, you can clone your github repo and skip this section.
+If you already initialized a project on Béluga with :doc:`../compute_canada/project.md`, you can clone your github repo and skip this section.
 If that is not the case, we will use `our lab cookiecutter template 
 <https://simexp-documentation.readthedocs.io/en/latest/data/project.html#starting-a-project>`_ to initialize a new project:
 
@@ -71,7 +71,7 @@ If that is not the case, we will use `our lab cookiecutter template
   mkdir /PATH/TO/MY/PROJECT
   cookiecutter -o /PATH/TO/MY/PROJECT -f  https://github.com/SIMEXP/cookiecutter-data-science
   
-Overall the whole repository layout should look like this:
+The whole repository layout should look like this:
 
 .. code:: bash
 
@@ -126,7 +126,7 @@ Go to your project directory and open vscode:
   cd /PATH/TO/MY/PROJECT
   code .
 
-Let's make sure that your auto-formatter is enabled clicking on ``File > Preferences > Settings`` and select ``autopep8`` after typing ``python formatting provider``.
+Let's make sure that your auto-formatter is enabled by clicking on ``File > Preferences > Settings`` and select ``autopep8`` after typing ``python formatting provider``.
 Search now ``format on save`` and enable it.
 
 You can start populating the repository based on your need, keep in mind that you should fit your files with the current layout.
@@ -140,9 +140,18 @@ You will realize that after saving your file, all the content will automatically
 Linting your code
 -----------------
 
-Where auto-formatter helps you re-format your code easilly, a linter will help you re-organize your code
+Where auto-formatter helps you re-format your code easilly, a linter guide you on the code syntax.
 We will again check if you enabled linting.
 Type ``CTRL+SHIFT+p`` to open a dialog and type ``python enable linting`` to enable it.
+
+If you see some code highlighted with wave underlining, check the message!
+Finally, you can run the following command to generate all the warnings:
+
+.. code:: bash
+
+  pylint PATH/TO/YOUR/CODE
+
+This gives you an idea about how well your code was written, you should have at least 7/10.
 
 Other optionnal advices
 -----------------------
@@ -155,8 +164,8 @@ Finally, for others to be able to reproduce your experiments, it is important to
 To go further
 :::::::::::::
 
-If you have difficulties running this tutorial, or you want to learn more about python, you should definitively check the `software-carpentry courses <https://software-carpentry.org/lessons/>`_.
-Check `this post <https://astrobites.org/2020/10/23/towards-better-research-code-and-software/>`_, a good guide for better research code.
+To learn more about python best practices, you should definitively check the `software-carpentry courses <https://software-carpentry.org/lessons/>`_.
+Check also `this post <https://astrobites.org/2020/10/23/towards-better-research-code-and-software/>`_, which is a good guide on writting better research code.
 
 
 Questions ?
