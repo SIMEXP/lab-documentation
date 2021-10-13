@@ -113,7 +113,7 @@ You are now ready to submit the jobs with ``sbatch``:
 
     .. code:: bash
 
-        sbatch ${SCRATCH}/DATASET_NAME/UNIX_TIME/.slurm/smriprep_sub-*.sh
+      find ${SCRATCH}/DATASET_NAME/UNIX_TIME/.slurm/smriprep_sub-*.sh -type f | while read file; do sbatch $file; done
 
 Checking the output
 :::::::::::::::::::
