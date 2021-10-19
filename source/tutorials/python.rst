@@ -167,6 +167,7 @@ Practically speaking, you want to reduce the use of conditions and loops, and wr
 .. image:: img/squint-test.jpeg
     :width: 600px
 
+`Source <https://www.freecodecamp.org/news/how-i-helped-my-partner-learn-to-code-6e1d1953812f/>`_
 
 If you want to gain immediate, further feedback on your python code, ``sourcery`` is a plug-in that gives you immediate feedback on code complexity.
 
