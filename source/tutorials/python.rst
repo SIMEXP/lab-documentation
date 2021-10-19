@@ -2,7 +2,9 @@ Make a python project from zero
 ===============================
 
 It is most likely that the project you are currently working on heavily depends on existing softwares, whether from the lab or not.
-There is also a high chance that it will be published and/or re-used internally, this is why it is important to have good `python <https://www.python.org/>`_ coding practices.
+When working on a scientific project, the code will likely be published and/or re-used internally.
+Your project might end but the scientific journey of your code goes on.
+Starting a project with good `python <https://www.python.org/>`_ coding practices will help people in the future (yourself included) to understand the code.
 
 .. image:: img/o5fy9.gif
     :width: 600px
@@ -16,6 +18,7 @@ What will you learn ?
 * Using Visual Studio code IDE
 * Organize your python project
 * Run basic vscode plugins on your code
+* Improve code quality
 
 Hand's on
 :::::::::
@@ -63,14 +66,14 @@ Cookiecutter template
 `Cookiecutter <https://github.com/cookiecutter/cookiecutter>`_ is a little command line utility to help you initialize a (python) project.
 
 If you already initialized a project on Béluga with :doc:`../compute_canada/project.md`, you can clone your github repo and skip this section.
-If that is not the case, we will use `our lab cookiecutter template 
+If that is not the case, we will use `our lab cookiecutter template
 <https://simexp-documentation.readthedocs.io/en/latest/data/project.html#starting-a-project>`_ to initialize a new project:
 
 .. code:: bash
 
   mkdir /PATH/TO/MY/PROJECT
   cookiecutter -o /PATH/TO/MY/PROJECT -f  https://github.com/SIMEXP/cookiecutter-data-science
-  
+
 The whole repository layout should look like this:
 
 .. code:: bash
@@ -153,13 +156,37 @@ Finally, you can run the following command to generate all the warnings:
 
 This gives you an idea about how well your code was written, you should have at least 7/10.
 
+Reduce complexity of your code (optional)
+-----------------------------------------
+
+Learning about condition statement, for loop, and various error check is commonly considered a milestone in ones journey to programming mastery.
+However, overusing these tools can make you code complex to understand for anyone, include future you.
+There's a simple way to quickly assess the complexity of your code: look on the left hand side of the code, you want the line formed by the start of the code to be as straight as possible.
+Practically speaking, you want to reduce the use of conditions and loops, and write smaller methods.
+
+.. image:: img/squint-test.jpeg
+    :width: 600px
+
+
+If you want to gain immediate, further feedback on your python code, ``sourcery`` is a plug-in that gives you immediate feedback on code complexity.
+
+Install this plugin:
+
+.. code:: bash
+
+  code --install-extension sourcery.sourcery
+
+To let sourcery give you feedback, you will need to have some part of the code in a function.
+Hover on a function you wrote and see the quality report on complexity, method length, and working memory.
+`Find the explaination of the metric here <https://github.com/sourcery-ai/sourcery/wiki/Quality-Report#code-metrics>`_.
+If the code metric shows you some sad faces, chances are you still have a lot of nested if conditions, and the function is big.
+
 Other optionnal advices
 -----------------------
 
-What we just saw are the strict minimal good practices when writing python code.
-Additionnally, you would like to add tests with `pytest <https://docs.pytest.org/en/6.2.x/>`_ (in the ``src/test`` folder).
-A good documentation on how to run your code in the ``README.md`` file is also really apreciated.
-Finally, for others to be able to reproduce your experiments, it is important to make a good `requirement file <https://pip.pypa.io/en/stable/user_guide/#requirements-files>`_ to list the software dependencies.
+A good documentation on how to run your code in the ``README.md`` file is usually apreciated.
+For others to be able to reproduce your experiments, it is important to make a good `requirement file <https://pip.pypa.io/en/stable/user_guide/#requirements-files>`_ to list the software dependencies.
+Add tests with `pytest <https://docs.pytest.org/en/6.2.x/>`_ (in the ``src/test`` folder) will help people understand the functionality and robustness of your code.
 
 To go further
 :::::::::::::
