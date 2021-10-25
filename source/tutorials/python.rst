@@ -182,6 +182,12 @@ Hover on a function you wrote and see the quality report on complexity, method l
 `Find the explaination of the metric here <https://github.com/sourcery-ai/sourcery/wiki/Quality-Report#code-metrics>`_.
 If the code metric shows you some sad faces, chances are you still have a lot of nested if conditions, and the function is big.
 
+.. warning::
+    Don't take bad scores too seriously! At the end of the day, they are just some references, not your collegue reading your code!
+    Working memory is a metric invented by the sourcery team, rather than a common metric. 
+    This metric is designed based on the maximum number of variables that need to be held in mind when reading the code in the function.
+    If you are interested in understanding the calculation of the metric, have a look at this `blog post <https://sourcery.ai/blog/working-memory/>`_.
+
 Other optionnal advices
 -----------------------
 
