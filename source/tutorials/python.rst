@@ -20,22 +20,22 @@ What will you learn ?
 * Run basic vscode plugins on your code
 * Improve code quality
 
-Hand's on
+Hands on
 :::::::::
 
 Ubuntu 18 is the preferrable OS
 -------------------------------
 
-It is important to share a common devlopement environment, because it reduces potential source of bugs when working with the lab tools.
+It is important to share a common development environment, because it reduces potential sources of bugs when working with the lab tools.
 Also, most of the neuroinformatic team and students heavily rely on the same OS, so getting help will be much easier.
 
-That is why we highly recomend you to change your OS to a linux based one like `ubuntu <https://ubuntu.com/>`_.
+That is why we highly recommend you to change your OS to a linux based one like `ubuntu <https://ubuntu.com/>`_.
 If you can't, then you can use the lab computers or continue with your original OS at your own risk.
 
 Visual Studio code IDE
 ----------------------
 
-`Visual Studio Code <https://code.visualstudio.com/>`_ is a verry popular IDE whether in industry or academia, supported in windows, macOS and of course linux.
+`Visual Studio Code <https://code.visualstudio.com/>`_ is a very popular IDE whether in industry or academia, supported in windows, macOS and of course linux.
 We invite you to install it by running the following commands on your computer:
 
 .. code:: bash
@@ -136,7 +136,7 @@ You can start populating the repository based on your need, keep in mind that yo
 
 .. note ::
   We advice you to enable the dark mode in File > Preferences > Color Theme.
-  Your eyes will be gratefull. :)
+  Your eyes will be grateful. :)
 
 You will realize that after saving your file, all the content will automatically auto-format ! That should save you lot of times, instead of formatting code yourself.
 
@@ -159,7 +159,7 @@ This gives you an idea about how well your code was written, you should have at 
 Reduce complexity of your code (optional)
 -----------------------------------------
 
-Learning about condition statement, for loop, and various error check is commonly considered a milestone in ones journey to programming mastery.
+Learning about condition statement, for loop, and various error check is commonly considered a milestone in one's journey to programming mastery.
 However, overusing these tools can make you code complex to understand for anyone, include future you.
 There's a simple way to quickly assess the complexity of your code: look on the left hand side of the code, you want the line formed by the start of the code to be as straight as possible.
 Practically speaking, you want to reduce the use of conditions and loops, and write smaller methods.
@@ -188,10 +188,10 @@ If the code metric shows you some sad faces, chances are you still have a lot of
     This metric is designed based on the maximum number of variables that need to be held in mind when reading the code in the function.
     If you are interested in understanding the calculation of the metric, have a look at this `blog post <https://sourcery.ai/blog/working-memory/>`_.
 
-Other optionnal advices
+Other optional advices
 -----------------------
 
-A good documentation on how to run your code in the ``README.md`` file is usually apreciated.
+A good documentation on how to run your code in the ``README.md`` file is usually appreciated.
 For others to be able to reproduce your experiments, it is important to make a good `requirement file <https://pip.pypa.io/en/stable/user_guide/#requirements-files>`_ to list the software dependencies.
 Add tests with `pytest <https://docs.pytest.org/en/6.2.x/>`_ (in the ``src/test`` folder) will help people understand the functionality and robustness of your code.
 
