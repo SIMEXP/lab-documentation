@@ -65,7 +65,7 @@ Cookiecutter template
 
 `Cookiecutter <https://github.com/cookiecutter/cookiecutter>`_ is a little command line utility to help you initialize a (python) project.
 
-If you have already initialized a project on Béluga with :doc:`../compute_canada/project.md`, you can clone your github repo and skip this section.
+If you have already initialized a project on Béluga with :doc:`project.md`, you can clone your github repo and skip this section.
 If that is not the case, we will use `our lab cookiecutter template
 <https://simexp-documentation.readthedocs.io/en/latest/data/project.html#starting-a-project>`_ to initialize a new project:
 
