@@ -65,7 +65,7 @@ Cookiecutter template
 
 `Cookiecutter <https://github.com/cookiecutter/cookiecutter>`_ is a little command line utility to help you initialize a (python) project.
 
-If you already initialized a project on Béluga with :doc:`../compute_canada/project.md`, you can clone your github repo and skip this section.
+If you have already initialized a project on Béluga with :doc:`../compute_canada/project.md`, you can clone your github repo and skip this section.
 If that is not the case, we will use `our lab cookiecutter template
 <https://simexp-documentation.readthedocs.io/en/latest/data/project.html#starting-a-project>`_ to initialize a new project:
 
@@ -135,7 +135,7 @@ Search now ``format on save`` and enable it.
 You can start populating the repository based on your need, keep in mind that you should fit your files with the current layout.
 
 .. note ::
-  We advice you to enable the dark mode in File > Preferences > Color Theme.
+  We advise you to enable the dark mode in File > Preferences > Color Theme.
   Your eyes will be grateful. :)
 
 You will realize that after saving your file, all the content will automatically auto-format ! That should save you lot of times, instead of formatting code yourself.
@@ -144,7 +144,7 @@ Linting your code
 -----------------
 
 Where auto-formatter helps you re-format your code easilly, a linter guide you on the code syntax.
-We will again check if you enabled linting.
+We will again check if you have enabled linting.
 Type ``CTRL+SHIFT+p`` to open a dialog and type ``python enable linting`` to enable it.
 
 If you see some code highlighted with wave underlining, check the message!
@@ -184,11 +184,11 @@ If the code metric shows you some sad faces, chances are you still have a lot of
 
 .. warning::
     Don't take bad scores too seriously! At the end of the day, they are just some references, not your collegue reading your code!
-    Working memory is a metric invented by the sourcery team, rather than a common metric. 
+    Working memory is a metric invented by the sourcery team, rather than a common metric.
     This metric is designed based on the maximum number of variables that need to be held in mind when reading the code in the function.
     If you are interested in understanding the calculation of the metric, have a look at this `blog post <https://sourcery.ai/blog/working-memory/>`_.
 
-Other optional advices
+Other optional advice
 -----------------------
 
 A good documentation on how to run your code in the ``README.md`` file is usually appreciated.
