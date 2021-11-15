@@ -22,12 +22,12 @@ Archive the data and move into the tape
 ---------------------------------------
 The first thing you will need to do is to ``tar`` the folder you want to archive.
 This is intended to reduce the number of files, since a tape system is not meant to store deep file tree.
-In the following example, ``DATA`` stands for the directory you want to tape:
+In the following example, ``MY_DATA`` stands for the directory you want to tape:
 
 .. code:: bash
     
-    cd /path/to/DATA
-    tar -czf /nearline/ctb-pbellec/DATA.tar.gz .
+    cd /path/to/MY_DATA
+    tar -czf /nearline/ctb-pbellec/MY_DATA.tar.gz .
 
 Check that the output indeed exists at ``/nearline/ctb-pbellec``
 
@@ -37,9 +37,9 @@ If you need to access and read your data, just untar it.
 
 .. code:: bash
 
-    tar -zxvf /nearline/ctb-pbellec/DATA.tar.gz
+    tar -zxvf /nearline/ctb-pbellec/MY_DATA.tar.gz
 
-All the content of the archive should be seen into the folder ``DATA``.
+All the content of the archive should be seen into the folder ``MY_DATA``.
 
 To go further
 :::::::::::::
