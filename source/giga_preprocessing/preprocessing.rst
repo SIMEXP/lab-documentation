@@ -59,11 +59,8 @@ with the `fMRIPrep <https://fmriprep.org/en/stable/>`_ container, and to manage 
 
 Templateflow
 ------------
-In order to give templateflow access to your directory, you will have to manually create it on your ``home``.
-
-.. code:: bash
-
-    mkdir -p /home/$USER/.cache/templateflow
+fMRIPrep uses common brain templates which are managed by [Templateflow](https://fmriprep.org/en/stable/spaces.html#templateflow).
+Our utility script takes care of it so you don't have any additionnal setup to do for that.
 
 BIDS validation
 ---------------
@@ -76,6 +73,10 @@ You don't need to install it as it is already available on Beluga, just run the 
 
         singularity exec -B PATH/TO/BIDS/DATASET:/DATA /lustre03/project/6003287/containers/fmriprep-20.2.1lts.sif bids-validator /DATA 
 
+.. warning::
+    If you are on [Narval](https://docs.computecanada.ca/wiki/Narval/en), please use the following directory instead (same for the reamining sections):
+    `/lustre06/project/6002071`
+
 Generating the slurm files
 ::::::::::::::::::::::::::
 A convenience script is available to help you run the `singularity <https://singularity.lbl.gov/>`_ command 
@@ -85,7 +86,7 @@ The following command run the script inside a compute node:
     .. code:: bash
 
         salloc --account=rrg-pbellec --mem-per-cpu=2G --time=4:00:0 --cpus-per-task=2
-        $HOME/projects/rrg-pbellec/fmriprep-slurm/singularity_run.bash PATH/TO/BIDS/DATASET fmriprep
+        /lustre03/project/6003287/fmriprep-slurm/singularity_run.bash PATH/TO/BIDS/DATASET fmriprep
 
 .. warning::
     We are asking the path to the dataset (without ``/`` at the end), not the content.
