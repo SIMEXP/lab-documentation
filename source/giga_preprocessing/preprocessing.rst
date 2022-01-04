@@ -88,11 +88,6 @@ The following command run the script inside a compute node:
         salloc --account=rrg-pbellec --mem-per-cpu=2G --time=4:00:0 --cpus-per-task=2
         /lustre03/project/6003287/fmriprep-slurm/singularity_run.bash PATH/TO/BIDS/DATASET fmriprep
 
-.. warning::
-    We are asking the path to the dataset (without ``/`` at the end), not the content.
-    For example, this is valid ``datasets/ADHD200`` but this is not 
-    ``datasets/ADHD200/``.
-
 .. note::
     There are lot of different options, check the `github page <https://github.com/SIMEXP/fmriprep-slurm>`_ for more informations.
     For example, you might want to add your email with the ``--email`` argument.
