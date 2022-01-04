@@ -85,7 +85,6 @@ The following command run the script inside a compute node:
 
     .. code:: bash
 
-        salloc --account=rrg-pbellec --mem-per-cpu=2G --time=4:00:0 --cpus-per-task=2
         /lustre03/project/6003287/fmriprep-slurm/singularity_run.bash PATH/TO/BIDS/DATASET fmriprep
 
 .. note::
@@ -96,7 +95,11 @@ The following command run the script inside a compute node:
     You might also want to add additionnal fmrirep command, for example to enable ICA_AROMA and disable FreeSurfer reconstruction. 
     In this case, you should add the argument as ``--fmriprep-args=\"--use-aroma --fs-no-reconall\"`` (don't forget the escaping character ``\``).
 
-It should take some time since the filesystem is slow, grab a cup of coffee!
+It should take some time since the filesystem is slow, grab a cup of coffee! If it takes too much time, you should run this inside a compute node:
+
+.. code:: bash
+
+        salloc --account=rrg-pbellec --mem-per-cpu=2G --time=4:00:0 --cpus-per-task=2
 
 Submitting the preprocesing jobs
 ::::::::::::::::::::::::::::::::
