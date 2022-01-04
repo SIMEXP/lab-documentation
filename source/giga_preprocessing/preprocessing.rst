@@ -59,7 +59,7 @@ with the `fMRIPrep <https://fmriprep.org/en/stable/>`_ container, and to manage 
 
 Templateflow
 ------------
-fMRIPrep uses common brain templates which are managed by [Templateflow](https://fmriprep.org/en/stable/spaces.html#templateflow).
+fMRIPrep uses common brain templates which are managed by `Templateflow <https://fmriprep.org/en/stable/spaces.html#templateflow>`_.
 Our utility script takes care of it so you don't have any additionnal setup to do for that.
 
 BIDS validation
@@ -74,8 +74,8 @@ You don't need to install it as it is already available on Beluga, just run the 
         singularity exec -B PATH/TO/BIDS/DATASET:/DATA /lustre03/project/6003287/containers/fmriprep-20.2.1lts.sif bids-validator /DATA 
 
 .. warning::
-    If you are on [Narval](https://docs.computecanada.ca/wiki/Narval/en), please use the following directory instead (same for the reamining sections):
-    `/lustre06/project/6002071`
+    If you are on `Narval <https://docs.computecanada.ca/wiki/Narval/en>`_, please use the following directory instead (same for the reamining sections):
+    ``/lustre06/project/6002071``
 
 Generating the slurm files
 ::::::::::::::::::::::::::
