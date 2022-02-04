@@ -29,6 +29,12 @@ In the following example, ``MY_DATA`` stands for the directory you want to tape:
     cd /path/to/MY_DATA
     tar -czf /nearline/ctb-pbellec/MY_DATA.tar.gz .
 
+.. note::
+    When the folder is big, it should take some time since the filesystem is slow. If it takes too much time, you should run this inside a compute node:
+    ``salloc --account=rrg-pbellec --mem=2G --time=4:00:0``
+
+
+
 Check that the output indeed exists at ``/nearline/ctb-pbellec``
 
 Moving back to the standard filesystem
