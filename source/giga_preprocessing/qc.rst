@@ -72,6 +72,19 @@ If everything worked as expected, open `http://127.0.0.1:8050/ <http://127.0.0.1
 You can click on the ``pass``, ``maybe``, or ``fail`` button to save the current status of the QC in a json file, to continue the QC later.
 The json file is saved under ``$HOME/.fmriprep-qc/${USER}_DATASET.json``, use it to share your results with others.
 
+
+fmriprep-g
+:::::::::
+
+There is also another tool that we discovered in case ours is not working anymore:
+https://github.com/nimh-comppsych/fmriprep-group-report
+You can find relevant instructions in the repository, then after generating the html files create a bridge as before:
+```
+ssh -L 8050:localhost:8050 username@beluga.computecanada.ca
+cd PATH/TO/GROUP/FOLDER/FROM/fmriprepg
+python3 -m http.server 8050
+```
+
 Questions ?
 :::::::::::
 
