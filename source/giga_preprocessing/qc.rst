@@ -79,11 +79,12 @@ fmriprep-g
 There is also another tool that we discovered in case ours is not working anymore:
 https://github.com/nimh-comppsych/fmriprep-group-report
 You can find relevant instructions in the repository, then after generating the html files create a bridge as before:
-```
-ssh -L 8050:localhost:8050 username@beluga.computecanada.ca
-cd PATH/TO/GROUP/FOLDER/FROM/fmriprepg
-python3 -m http.server 8050
-```
+
+    .. code:: bash
+    
+        ssh -L 8050:localhost:8050 username@beluga.computecanada.ca
+        cd PATH/TO/GROUP/FOLDER/FROM/fmriprepg
+        python3 -m http.server 8050
 
 Questions ?
 :::::::::::
