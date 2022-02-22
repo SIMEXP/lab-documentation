@@ -188,6 +188,14 @@ If the code metric shows you some sad faces, chances are you still have a lot of
     This metric is designed based on the maximum number of variables that need to be held in mind when reading the code in the function.
     If you are interested in understanding the calculation of the metric, have a look at this `blog post <https://sourcery.ai/blog/working-memory/>`_.
 
+Remote vscode via ssh
+---------------------
+
+You will mostly work on remote server, and it can be much more convenient to modify a file using visual studio IDE.
+Hopefully there is an easy way to work remotely on a project using the VS code extension `remote ssh`.
+You can find relevant information here:
+https://code.visualstudio.com/docs/remote/ssh-tutorial
+
 Other optional advice
 -----------------------
 
