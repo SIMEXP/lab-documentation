@@ -8,7 +8,7 @@ For example, it can be really usefull if you want to archive the analysis from a
 Pre-requisites
 ::::::::::::::
 * Basics use of Linux (cmd line, shell scripting)
-* Our tutorial on :doc:`../tutorials/hpc`
+* Our tutorial on :doc:`tutorials/hpc`
 
 What will you learn ?
 :::::::::::::::::::::
@@ -22,12 +22,12 @@ Archive the data and move into the tape
 ---------------------------------------
 The first thing you will need to do is to ``tar`` the folder you want to archive.
 This is intended to reduce the number of files, since a tape system is not meant to store deep file tree.
-In the following example, ``MY_DATA`` stands for the directory you want to tape:
+In the following example, ``my/data`` stands for the directory you want to tape:
 
 .. code:: bash
     
-    cd /path/to/MY_DATA
-    tar -czf /nearline/ctb-pbellec/MY_DATA.tar.gz .
+    cd /path/to/my/data
+    tar -czf /nearline/ctb-pbellec/my_data.tar.gz .
 
 .. note::
     When the folder is big, it should take some time since the filesystem is slow. If it takes too much time, you should run this inside a compute node:
@@ -43,9 +43,9 @@ If you need to access and read your data, just untar it.
 
 .. code:: bash
 
-    tar -zxvf /nearline/ctb-pbellec/MY_DATA.tar.gz
+    tar -zxvf /nearline/ctb-pbellec/my_data.tar.gz
 
-All the content of the archive should be seen into the folder ``MY_DATA``.
+All the content of the archive should be seen into the folder ``my_data``.
 
 To go further
 :::::::::::::
