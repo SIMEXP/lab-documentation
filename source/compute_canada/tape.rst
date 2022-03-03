@@ -8,7 +8,7 @@ For example, it can be really usefull if you want to archive the analysis from a
 Pre-requisites
 ::::::::::::::
 * Basics use of Linux (cmd line, shell scripting)
-* Our tutorial on :doc:`tutorials/hpc`
+* Our tutorial on :doc:`/tutorials/hpc`
 
 What will you learn ?
 :::::::::::::::::::::
