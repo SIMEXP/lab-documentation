@@ -47,6 +47,11 @@ If you need to access and read your data, just untar it.
 
 All the content of the archive should be seen into the folder ``my_data``.
 
-To go further
-:::::::::::::
-You can check also check the `documentation from compute canada <https://docs.computecanada.ca/wiki/Using_nearline_storage>`_.
+Important information
+---------------------
+Make sure to read all relevant informaiton from the `computecanada documentation <https://docs.computecanada.ca/wiki/Using_nearline_storage>`_.
+For example don't upload small files to the tape server.
+
+Questions
+:::::::::
+Do not hesitate to ask your questions on the SIMEXP lab slack in #data channel!
