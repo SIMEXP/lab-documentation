@@ -150,7 +150,7 @@ Before continuing this tutorial, you should `install the latest singularity <htt
         rsync -rlt --progress anaconda3.simg par_job.py params beluga.computecanada.ca:~/projects/rrg-pbellec/<user_name>/
 
 5.  We will submit a whole batch of jobs with just one script ``simple_ar_job.bash`` using the `job array <https://docs.alliancecan.ca/wiki/Running_jobs#Array_job>`_ mechanism.
-    This will allows us to run our application in parrallel among many nodes on computecanada.
+    This will allows us to run our application in parrallel among many nodes on Alliance Canada.
 
     .. literalinclude:: files/simple_ar_job.bash
         :linenos:
