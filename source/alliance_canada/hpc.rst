@@ -1,10 +1,10 @@
-Using super computers from compute canada
+Using super computers from alliance canada
 =========================================
 
 `Compute-canada <https://www.computecanada.ca/home/>`_ is the provider of High Performance Computers (HPC) that allows you to achieve massive computation speed.
 It is a non-profit canadian organization providing free computation power to canadian institutions, so you should use it!
 
-Don't hesitate to check the `compute canada website <https://docs.computecanada.ca/wiki/Running_jobs>`_ for more tutorials.
+Don't hesitate to check the `alliance canada website <https://docs.alliancecan.ca/wiki/Running_jobs>`_ for more tutorials.
 
 Pre-requisites
 ::::::::::::::
@@ -14,11 +14,11 @@ Pre-requisites
 
 What will you learn ?
 :::::::::::::::::::::
-* Connect to a compute canada node
+* Connect to a alliance canada node
 * Submit a simple job to the server
 * Launch a parrallelized containerized app
 
-Connecting to compute canada server
+Connecting to alliance canada server
 :::::::::::::::::::::::::::::::::::
 
 The first thing to do is to connect to their server!
@@ -28,7 +28,7 @@ For that, you will need a compute-canada account:
 2.  Click on ``register`` and enter your personnal information.
     For the lab, the insitution is ``udem`` and the department is ``Psychology``.
     You should also ask your sponsor (in our case Pierre Bellec) for his ``CCRI reference number``.
-3.  Once your registering is validated, you are ready to ssh into `beluga <https://docs.computecanada.ca/wiki/B%C3%A9luga/en>`_:
+3.  Once your registering is validated, you are ready to ssh into `beluga <https://docs.alliancecan.ca/wiki/B%C3%A9luga/en>`_:
 
     .. code-block:: bash
 
@@ -50,7 +50,7 @@ The HPC uses a *job scheduler* called `SLURM <https://slurm.schedmd.com/>`_ to d
     Using a scheduler has few advantages. 
 
     Because the service is free, it is a way to ensure fair share between all users through
-    `scheduling policies <https://docs.computecanada.ca/wiki/Job_scheduling_policies>`_. It is also a way to regularize the usage over time,
+    `scheduling policies <https://docs.alliancecan.ca/wiki/Job_scheduling_policies>`_. It is also a way to regularize the usage over time,
     so there is no huge peak of usage at any moment. Finally, submitting a job through a scheduler allow the user to work on other tasks
     independently and in parrallel.
 
@@ -70,7 +70,7 @@ Submit a simple serial job
 In this section we will submit our first serial job on the server!
 We will create a simple job  that output a sentence using a job script ``simple_job.bash``.
 
-1.  Create a file ``simple_job.bash`` on your computer, this will be your job script that we will submit later to compute canada.
+1.  Create a file ``simple_job.bash`` on your computer, this will be your job script that we will submit later to Alliance Canada.
 
     .. literalinclude:: files/simple_job.bash
         :linenos:
@@ -79,7 +79,7 @@ We will create a simple job  that output a sentence using a job script ``simple_
     You can add lot of informations there, just check the `online documentation <https://slurm.schedmd.com/sbatch.html>`_.
 
 2.  Transfer this file from your computer to the server with `rsync <https://linux.die.net/man/1/rsync>`_.
-    You can also use `sftp <https://docs.computecanada.ca/wiki/Transferring_data>`_ if you want to encrypt what you are sending.
+    You can also use `sftp <https://docs.alliancecan.ca/wiki/Transferring_data>`_ if you want to encrypt what you are sending.
 
     .. code:: bash
 
@@ -87,7 +87,7 @@ We will create a simple job  that output a sentence using a job script ``simple_
 
     .. warning::
         An important practice is to use your home directory inside the lab group ``def-xxx`` like above.
-        If you store data in the root directory at ``~``, you will run out of memory fast because `you have just 47GB in there <https://docs.computecanada.ca/wiki/Storage_and_file_management>`_.
+        If you store data in the root directory at ``~``, you will run out of memory fast because `you have just 47GB in there <https://docs.alliancecan.ca/wiki/Storage_and_file_management>`_.
 
 3.  Submit the job script with SLURM,
 
@@ -149,7 +149,7 @@ Before continuing this tutorial, you should `install the latest singularity <htt
 
         rsync -rlt --progress anaconda3.simg par_job.py params beluga.computecanada.ca:~/projects/rrg-pbellec/<user_name>/
 
-5.  We will submit a whole batch of jobs with just one script ``simple_ar_job.bash`` using the `job array <https://docs.computecanada.ca/wiki/Running_jobs#Array_job>`_ mechanism.
+5.  We will submit a whole batch of jobs with just one script ``simple_ar_job.bash`` using the `job array <https://docs.alliancecan.ca/wiki/Running_jobs#Array_job>`_ mechanism.
     This will allows us to run our application in parrallel among many nodes on computecanada.
 
     .. literalinclude:: files/simple_ar_job.bash
@@ -205,7 +205,7 @@ There is however a limit of 3h for this type of allocation.
 When you need to do some heavy, long duration jobs, you should use the :code:`sbatch` command described above.
 
 .. note::
-    Compute canada have good reasons to do constrain the time, interactive nodes are really for short duration development, compiling or debugging of jobs. 
+    Alliance Canada have good reasons to do constrain the time, interactive nodes are really for short duration development, compiling or debugging of jobs. 
     When running interactive jobs (eg. for a notebook) it is likely that a lot of time will be spent not running anything, preventing other users to use resources.
 
 Debugging your application
@@ -245,7 +245,7 @@ The scratch path is different for each compute node, and because you will be all
     One might expect a ``disk quota exceeded`` when transfering data to the scratch space.
     this is because this SSD is shared between other users who have also accessed the compute node.
     To avoid this, you can access a whole node to make sure you have access to all the local storage.
-    Check the `nodes characteristic <https://docs.computecanada.ca/wiki/B%C3%A9luga/en#Node_Characteristics>`_ to know how much scratch space it has.
+    Check the `nodes characteristic <https://docs.alliancecan.ca/wiki/B%C3%A9luga/en#Node_Characteristics>`_ to know how much scratch space it has.
    
 
 Another important point is that if your dataset contains a lof of files (more than a thousand), ``rsync`` can take some time to build the file list.
@@ -262,8 +262,8 @@ Here is a concrete example with neuromod:
     mkdir $SLURM_TMPDIR/hcptrt
     rysnc -avP --info=progress2 --files-from=~/list_files_neuromod projects/rrg-pbellec/datasets/cneuromod_new/hcptrt $SLURM_TMPDIR/hcptrt
 
-Finally, remember that if you need to transfer data from two different servers (for example from ``elm`` to ``beluga``), it is better to use `globus <https://docs.computecanada.ca/wiki/Globus>`_.
-Check the `compute canada documentation <https://docs.computecanada.ca/wiki/Storage_and_file_management>`_ for more details on this topic.
+Finally, remember that if you need to transfer data from two different servers (for example from ``elm`` to ``beluga``), it is better to use `globus <https://docs.alliancecan.ca/wiki/Globus>`_.
+Check the `alliance canada documentation <https://docs.alliancecan.ca/wiki/Storage_and_file_management>`_ for more details on this topic.
 
 SLURM notifications on slack
 ----------------------------
@@ -287,4 +287,4 @@ Just insert the following in your ``.sh`` job script:
 Questions ?
 :::::::::::
 
-If you have any issues using compute canada, don't hesitate to ask your questions on the SIMEXP lab slack in ``#compute_canada`` channel!
+If you have any issues using Alliance Canada, don't hesitate to ask your questions on the SIMEXP lab slack in ``#alliance_canada`` channel!

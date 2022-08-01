@@ -72,4 +72,4 @@ You can point to a specific notebook ``nilearn-example.ipynb`` by adding ``?file
 Questions ?
 :::::::::::
 
-If you have any issues using compute canada, don't hesitate to ask your questions on the SIMEXP lab slack in ``#conp`` channel!
+If you have any issues using Alliance Canada, don't hesitate to ask your questions on the SIMEXP lab slack in ``#conp`` channel!

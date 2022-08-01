@@ -1,6 +1,6 @@
 Preprocesing datasets on Beluga with fMRIPrep
 =============================================
-This document purpose is to allow anyone to preprocess datasets that are stored on the compute canada lab allocation.
+This document purpose is to allow anyone to preprocess datasets that are stored on the Alliance Canada lab allocation.
 We will specifically use `fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_, a python tool developped internally in the lab to automatically
 generate `slurm <https://slurm.schedmd.com/sbatch.html>`_ files from a `BIDS <https://bids-specification.readthedocs.io/en/stable/>`_ dataset.
 
@@ -55,7 +55,7 @@ with the `fMRIPrep <https://fmriprep.org/en/stable/>`_ container, and to manage 
 .. warning::
     You must check that `singularity <https://singularity.lbl.gov/>`__, the `fMRIPrep <https://fmriprep.org/en/stable/>`__
     container and `fmriprep-slurm <https://github.com/SIMEXP/fmriprep-slurm>`_ is available on the system, 
-    this should be the case for `Béluga <https://docs.computecanada.ca/wiki/B%C3%A9luga/en>`_ .
+    this should be the case for `Béluga <https://docs.alliancecan.ca/wiki/B%C3%A9luga/en>`_ .
 
 Templateflow
 ------------
@@ -73,9 +73,6 @@ You don't need to install it as it is already available on Beluga, just run the 
 
         singularity exec -B PATH/TO/BIDS/DATASET:/DATA /lustre03/project/6003287/containers/fmriprep-20.2.1lts.sif bids-validator /DATA 
 
-.. warning::
-    If you are on `Narval <https://docs.computecanada.ca/wiki/Narval/en>`_, please use the following directory instead (same for the reamining sections):
-    ``/lustre06/project/6002071``
 
 Generating the slurm files
 ::::::::::::::::::::::::::
@@ -144,4 +141,4 @@ and more specifically the section on `singularity <https://fmriprep.org/en/stabl
 Questions ?
 :::::::::::
 
-If you have any issues using compute canada, don't hesitate to ask your questions on the SIMEXP lab slack in ``#compute_canada`` channel!
+If you have any issues using Alliance Canada, don't hesitate to ask your questions on the SIMEXP lab slack in ``#alliance_canada`` channel!

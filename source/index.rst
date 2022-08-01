@@ -14,11 +14,11 @@ Please help us write this documentation
 
 .. toctree::
    :maxdepth: 1
-   :caption: Compute canada
+   :caption: Alliance Canada
 
-   compute_canada/starter.md
-   compute_canada/tape.rst
-   compute_canada/hpc.rst
+   alliance_canada/starter.md
+   alliance_canada/tape.rst
+   alliance_canada/hpc.rst
 
 .. toctree::
    :maxdepth: 1

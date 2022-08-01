@@ -45,7 +45,7 @@ Now you can log-in again, but this time by forwarding your local port:
 
         ssh -L 8050:localhost:8050 username@beluga.computecanada.ca
         
-Where ``username`` is from the compute canada organization.
+Where ``username`` is from the Alliance Canada organization.
 
 Make sure that you have followed the :ref:`Preparation steps`, and spawn the http server:
 
@@ -89,4 +89,4 @@ You can find relevant instructions in the repository, then after generating the 
 Questions ?
 :::::::::::
 
-If you have any issues using compute canada, don't hesitate to ask your questions on the SIMEXP lab slack in ``#compute_canada`` channel!
+If you have any issues using Alliance Canada, don't hesitate to ask your questions on the SIMEXP lab slack in ``#alliance_canada`` channel!
