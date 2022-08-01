@@ -1,10 +1,10 @@
-Using super computers from alliance canada
+Using super computers from Alliance Canada
 =========================================
 
 `Compute-canada <https://www.computecanada.ca/home/>`_ is the provider of High Performance Computers (HPC) that allows you to achieve massive computation speed.
 It is a non-profit canadian organization providing free computation power to canadian institutions, so you should use it!
 
-Don't hesitate to check the `alliance canada website <https://docs.alliancecan.ca/wiki/Running_jobs>`_ for more tutorials.
+Don't hesitate to check the `Alliance Canada website <https://docs.alliancecan.ca/wiki/Running_jobs>`_ for more tutorials.
 
 Pre-requisites
 ::::::::::::::
@@ -14,11 +14,11 @@ Pre-requisites
 
 What will you learn ?
 :::::::::::::::::::::
-* Connect to a alliance canada node
+* Connect to a Alliance Canada node
 * Submit a simple job to the server
 * Launch a parrallelized containerized app
 
-Connecting to alliance canada server
+Connecting to Alliance Canada server
 :::::::::::::::::::::::::::::::::::
 
 The first thing to do is to connect to their server!
@@ -263,7 +263,7 @@ Here is a concrete example with neuromod:
     rysnc -avP --info=progress2 --files-from=~/list_files_neuromod projects/rrg-pbellec/datasets/cneuromod_new/hcptrt $SLURM_TMPDIR/hcptrt
 
 Finally, remember that if you need to transfer data from two different servers (for example from ``elm`` to ``beluga``), it is better to use `globus <https://docs.alliancecan.ca/wiki/Globus>`_.
-Check the `alliance canada documentation <https://docs.alliancecan.ca/wiki/Storage_and_file_management>`_ for more details on this topic.
+Check the `Alliance Canada documentation <https://docs.alliancecan.ca/wiki/Storage_and_file_management>`_ for more details on this topic.
 
 SLURM notifications on slack
 ----------------------------
