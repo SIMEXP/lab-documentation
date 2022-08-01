@@ -1,7 +1,7 @@
 Using the nearline storage server on Beluga
 ===========================================
 
-Nearline is a tape-based filesystem used to archive data on compute canada.
+Nearline is a tape-based filesystem used to archive data on Alliance Canada.
 It uses good old magnetic tape, with a data transfer up to 140 MB/s.
 For example, it can be really usefull if you want to archive the analysis from a paper that you are no longer working on.
 
@@ -49,7 +49,7 @@ All the content of the archive should be seen into the folder ``my_data``.
 
 Important information
 ---------------------
-Make sure to read all relevant informaiton from the `computecanada documentation <https://docs.computecanada.ca/wiki/Using_nearline_storage>`_.
+Make sure to read all relevant informaiton from the `Alliance Canada documentation <https://docs.alliancecan.ca/wiki/Using_nearline_storage>`_.
 For example don't upload small files to the tape server.
 
 Questions
