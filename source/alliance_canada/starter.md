@@ -1,12 +1,12 @@
 # Let's get started
 
-The lab applies for storage space and compute time on Compute Canada every year.
+The lab applies for storage space and compute time on Alliance Canada every year.
 These resources are limited and have to be shared fairly across members of the lab.
 Given that no member of the lab has privileged admin rights, this fairness relies on everyone adopting a clear code of conduct, and shared organization.
 
 ## Setup your environment
 
-When you are new to Compute Canada, we will ask you to run a setup script that will set data management access and give you access to utils for project management, including:
+When you are new to Alliance Canada, we will ask you to run a setup script that will set data management access and give you access to utils for project management, including:
 
 - setup ACLs for the data admin to the project and nearline folders
 - add project management commands to your bash environment

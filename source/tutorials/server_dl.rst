@@ -26,7 +26,7 @@ In the mean-time, `jupyter notebook <https://jupyter.org/>`_ provides a portable
 Hand's on
 :::::::::
 
-Here, we will learn how to train a deep model on a remote server (could be CRIUGM, or computecanada)
+Here, we will learn how to train a deep model on a remote server (could be CRIUGM, or Alliance Canada)
 using `singularity <https://singularity.lbl.gov/>`_.
 
 .. note::
