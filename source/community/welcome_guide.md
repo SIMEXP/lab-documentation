@@ -11,7 +11,7 @@ It is also frequent for us to collaborate using Google products (gmail, doc, she
 
 ## Management
 
-Julie - Project Manager
+Julie - Project Manager.
 Emilie - Lab manager
 
 ## Neuroinformatic & neuroscience
