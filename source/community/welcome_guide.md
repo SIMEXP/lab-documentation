@@ -57,20 +57,11 @@ First thing at your arrival you will need a **social insurance number (SIN)**. I
 - Work permit
 - Parent’s name (Romanised)
 
-Signing up for **Régie de l'assurance maladie du Québec (RAMQ)**
+Signing up for **Régie de l'assurance maladie du Québec (RAMQ)**:
 - You will need temporary traveler’s insurance to cover the first three months of your time in Québec. It can be [purchased via the Blue Cross](https://qc.bluecross.ca/travel-insurance/travel-insurance-solutions/visitors-to-canada). 
 - Immediately after obtaining your SIN, you need to [contact RAMQ](https://www.ramq.gouv.qc.ca/en/citizens/health-insurance/register) to let them know you have arrived in Canada. Follow the directions they give you. It will take three months after this first call for your insurance request to process. You will receive your RAMQ card in the mail.
 
-(For CRIUGM postdocs) **Group health insurance** is only applicable after obtaining RAMQ. *This procedure was written before it was automatically available for CRIUGM postdocs.*
-- Online account access: get it asap when you were told the application was successful. Email Paulette to get your certificate number. This is extremely important. Register on the website [here](https://www.agea-gbim.dsf-dfs.com/AGEA-GBIM/Athntfctn/InscrptnLgn/Regime_Plan.aspx). 
-OR Desjardins customer service can help you. This is extremely important if you want to know the actual details of your insurance.
-- **Insurance certificates** should be posted to you. If not, print through the online system
-- Basic insurance: you don’t need to do anything
-- Adding **option 1**: this is coverage for a lot of items not in base RAMQ, such as opticals, physiotherapy. You will need to complete a health questionnaire. In theory CIUSSS admin should provide it to you, but they can forget. If you have an online account, submit it through the online system.
-- Adding **option 2**: this became an automatic opt-in for new joiners after April 2022.
-- Adding **option 3**: this is dental coverage. You need option 1 approved to be on option 3.
-
-Access to **LOGIBEC**
+Access to **LOGIBEC**:
 - Get your employee number from HR, they should also send you all the instructions.
 - Contact the Guichet unique du CIUSSS at 514-940-5216 for the access codes to Logibec. If you cannot speak French, get someone to help you.
 
