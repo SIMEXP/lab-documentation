@@ -16,19 +16,19 @@ It is also frequent for us to collaborate using Google products (gmail, doc, she
 
 ## Neuroinformatic & neuroscience
 
-First of all, you should check the tutorials that we designed for the lab: https://simexp-documentation.readthedocs.io/en/latest/.
+First of all, you should check the [tutorials that we designed for the lab](https://simexp-documentation.readthedocs.io/en/latest/).
 This should guide you through some tools we are intensively using, for example you would like to start with setting up a Compute Canada account.
 
 ## Questions
 
-If you have specific questions, you should check if there is an existing Slack channel and ask your question there. For your information, we also provide a table with lab member expertise, the link to which is in the document pinned to the Slack 'Welcome' channel. <!--- I wasn't sure if we want the link to the expertise sheet public? --->
+If you have specific questions, you should check if there is an existing Slack channel and ask your question there. For your information, we also provide a table with lab member expertise, the link to which is in the document pinned to the Slack 'Welcome' channel.
 
 ## Role-specific information
 
 As a **Udem Student/Employee**
 
-- Set up your VPN so you can access to service from home: http://vpn.umontreal.ca 
-- Declare your holidays at https://www.synchro.umontreal.ca 
+- Set up your VPN so you can [access services from home](http://vpn.umontreal.ca).
+- [Declare your holidays](https://www.synchro.umontreal.ca).
 
 As a **Master Student**, you might be particularly interested in:
 
@@ -60,16 +60,12 @@ First thing at your arrival you will need a **social insurance number (SIN)**. I
 - Parent’s name (Romanised)
 
 Signing up for **Régie de l'assurance maladie du Québec (RAMQ)**
-- You will need temporary traveler’s insurance to cover the first three months of your time in Québec. It can be purchased via the Blue Cross at https://qc.bluecross.ca/travel-insurance/travel-insurance-solutions/visitors-to-canada 
-- Immediately after obtaining your SIN, you need to contact RAMQ to let them know you have arrived in Canada. Their website, with directions, is found here: https://www.ramq.gouv.qc.ca/en/citizens/health-insurance/register. Follow the directions they give you. It will take three months after this first call for your insurance request to process. You will receive your RAMQ card in the mail.
+- You will need temporary traveler’s insurance to cover the first three months of your time in Québec. It can be [purchased via the Blue Cross](https://qc.bluecross.ca/travel-insurance/travel-insurance-solutions/visitors-to-canada). 
+- Immediately after obtaining your SIN, you need to [contact RAMQ](https://www.ramq.gouv.qc.ca/en/citizens/health-insurance/register) to let them know you have arrived in Canada. Follow the directions they give you. It will take three months after this first call for your insurance request to process. You will receive your RAMQ card in the mail.
 
-<!--- I wonder if we should keep the group health insurance info just in the doc? I'm also not sure if this is up to date given postdocs
- are now automatically enrolled --->
 (For CRIUGM postdocs) **Group health insurance** is only applicable after obtaining RAMQ. *This procedure was written before it was automatically available for CRIUGM postdocs.*
-- Online account access: get it asap when you were told the application was successful. Email Paulette to get your certificate number. This is extremely important. Register on this website:
-https://www.agea-gbim.dsf-dfs.com/AGEA-GBIM/Athntfctn/InscrptnLgn/Regime_Plan.aspx 
-OR Desjardins customer service can help you.
-This is extremely important if you want to know the actual details of your insurance.
+- Online account access: get it asap when you were told the application was successful. Email Paulette to get your certificate number. This is extremely important. Register on the website [here](https://www.agea-gbim.dsf-dfs.com/AGEA-GBIM/Athntfctn/InscrptnLgn/Regime_Plan.aspx). 
+OR Desjardins customer service can help you. This is extremely important if you want to know the actual details of your insurance.
 - **Insurance certificates** should be posted to you. If not, print through the online system
 - Basic insurance: you don’t need to do anything
 - Adding **option 1**: this is coverage for a lot of items not in base RAMQ, such as opticals, physiotherapy. You will need to complete a health questionnaire. In theory CIUSSS admin should provide it to you, but they can forget. If you have an online account, submit it through the online system.
@@ -96,7 +92,7 @@ You might want to keep receipts related to the following expenses once you have 
 - **Medical expenses** not covered through RAMQ, and/or the group health insurance plan.
 
 Around March every year, you will receive tax slips. If you are paid through CIUSSS, it will be on LOGIBEC.
-Lots of people in the lab use the free platform WealthSimple to do their taxes: https://www.wealthsimple.com/en-ca/product/tax. It will guide you through the process based on your tax slips. This is where you can see if you can submit a tax refund claim for relocation and medication. The system supports automatic submission to Canada Revenue Agency (CRA). You need to make sure the following information is correct:
+Lots of people in the lab use the free platform [WealthSimple](https://www.wealthsimple.com/en-ca/product/tax) to do their taxes. It will guide you through the process based on your tax slips. This is where you can see if you can submit a tax refund claim for relocation and medication. The system supports automatic submission to Canada Revenue Agency (CRA). You need to make sure the following information is correct:
 - SIN number
 - Name should match the data on the paper you got when applying for SIN
 If the above information matches their record, you can submit it automatically as a newcomer. For Revenue Québec, newcomers might need to submit via mail.
@@ -104,18 +100,8 @@ If the above information matches their record, you can submit it automatically a
 ### OPUS card / STM card
 
 After purchasing your OPUS card, register the card either online or at certain stations:
-- Online from one day after the purchase: https://contactstm.info/en 
-- In person: https://www.stm.info/en/info/customer-service/after-sales-services-stations 
+- [Online](https://contactstm.info/en) from one day after the purchase.  
+- In person at [one of these stations](https://www.stm.info/en/info/customer-service/after-sales-services-stations)
 
-If the card is lost, go to the stations with in person registration service, with your photo ID, to get a partial refund or a new card with your remaining passes loaded.
-Full info: https://www.stm.info/en/info/fares/opus-cards-and-other-fare-media/registered-opus-card 
-
-<!--- Do we want the info about conference reimbursement on the website? --->
-
-
-
-
-
-
-
-
+If the card is lost, go to a station with in person registration service, with your photo ID, to get a partial refund or a new card with your remaining passes loaded.
+Full info can be found [here](https://www.stm.info/en/info/fares/opus-cards-and-other-fare-media/registered-opus-card).
