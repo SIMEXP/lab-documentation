@@ -27,7 +27,7 @@ If you have specific questions, you should check if there is an existing Slack c
 
 As a **Udem Student/Employee**
 
-- Set up your VPN so you can [access services from home](http://vpn.umontreal.ca).
+- [Set up your VPN](http://vpn.umontreal.ca) so you can access services from home.
 - [Declare your holidays](https://www.synchro.umontreal.ca).
 
 As a **Master Student**, you might be particularly interested in:
@@ -93,15 +93,12 @@ You might want to keep receipts related to the following expenses once you have 
 
 Around March every year, you will receive tax slips. If you are paid through CIUSSS, it will be on LOGIBEC.
 Lots of people in the lab use the free platform [WealthSimple](https://www.wealthsimple.com/en-ca/product/tax) to do their taxes. It will guide you through the process based on your tax slips. This is where you can see if you can submit a tax refund claim for relocation and medication. The system supports automatic submission to Canada Revenue Agency (CRA). You need to make sure the following information is correct:
-- SIN number
-- Name should match the data on the paper you got when applying for SIN
+- SIN number.
+- Name should match the data on the paper you got when applying for SIN.
 If the above information matches their record, you can submit it automatically as a newcomer. For Revenue Québec, newcomers might need to submit via mail.
 
 ### OPUS card / STM card
 
-After purchasing your OPUS card, register the card either online or at certain stations:
-- [Online](https://contactstm.info/en) from one day after the purchase.  
-- In person at [one of these stations](https://www.stm.info/en/info/customer-service/after-sales-services-stations)
-
-If the card is lost, go to a station with in person registration service, with your photo ID, to get a partial refund or a new card with your remaining passes loaded.
-Full info can be found [here](https://www.stm.info/en/info/fares/opus-cards-and-other-fare-media/registered-opus-card).
+- After purchasing your OPUS card, register the card either [online](https://contactstm.info/en) or at [certain stations](https://www.stm.info/en/info/customer-service/after-sales-services-stations).
+- If the card is lost, go to a station with in person registration service, with your photo ID, to get a partial refund or a new card with your remaining passes loaded.
+- Full info can be found [here](https://www.stm.info/en/info/fares/opus-cards-and-other-fare-media/registered-opus-card).
