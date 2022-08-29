@@ -52,7 +52,7 @@ If you need a **visa**, you will be applying for the **LMIA-exempt** work permit
   - Employment Records = you can merge & copy the info above plus add any other prior document related to your job records 
   - Proof that you Meet the Requirements of the Job Being Offered = basically your PhD diploma or transcripts and proof of upcoming graduation
 
-First thing at your arrival you will need a **social insurance number (SIN)**. If you apply in person it will be dated from the day of application. To obtain your SIN, walk in to Service Canada. You will need:
+First thing at your arrival you will need a **social insurance number (SIN)**. If you apply in person it will be dated from the day of application. To obtain your SIN, walk in to [Service Canada](https://www.canada.ca/en/employment-social-development/services/sin/apply.html). You will need:
 - Passport
 - Work permit
 - Parent’s name (Romanised)
