@@ -17,7 +17,7 @@ It is also frequent for us to collaborate using Google products (gmail, doc, she
 ## Neuroinformatic & neuroscience
 
 First of all, you should check the [tutorials that we designed for the lab](https://simexp-documentation.readthedocs.io/en/latest/).
-This should guide you through some tools we are intensively using, for example you would like to start with setting up a Compute Canada account.
+This should guide you through some tools we are intensively using, for example you would like to start with setting up a Alliance Canada account.
 
 ## Questions
 
