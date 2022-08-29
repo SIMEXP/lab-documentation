@@ -40,9 +40,7 @@ As a **PhD Student**, you might be particularly interested in:
 
 As a **Postdoc**, you might be particularly interested in:
 
-### Visa application
-
-- If you need a visa, you will be applying for the **LMIA-exempt** work permit unless there’s any special circumstances.
+If you need a **visa**, you will be applying for the **LMIA-exempt** work permit unless there’s any special circumstances.
 - Documents required for your visa application. In brief, don’t be afraid of copying the same documents (eg. PhD transcript) in multiple places! Just build as strong a dossier as you can - detailed, redundant and coherent is the key:  
   - CV
   - Passport
