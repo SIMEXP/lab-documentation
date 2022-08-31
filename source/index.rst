@@ -11,6 +11,7 @@ Please help us write this documentation
 
    community/manifesto.md
    community/coc.md
+   community/welcome_guide.md
 
 .. toctree::
    :maxdepth: 1
