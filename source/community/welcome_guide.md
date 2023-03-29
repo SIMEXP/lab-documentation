@@ -29,6 +29,7 @@ As a **Udem Student/Employee**
 
 - [Set up your VPN](http://vpn.umontreal.ca) so you can access services from home.
 - [Declare your holidays](https://www.synchro.umontreal.ca).
+- UdeM offers [psychological support for students](https://vieetudiante.umontreal.ca/sante-bien-etre/soutien-psychologique).
 
 As a **Master Student**, you might be particularly interested in:
 
