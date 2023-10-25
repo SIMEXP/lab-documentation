@@ -5,7 +5,8 @@ These resources are limited and have to be shared fairly across members of the l
 Given that no member of the lab has privileged admin rights, this fairness relies on everyone adopting a clear code of conduct, and shared organization.
 
 ## Get access 
-To get access to simexp resources in compute canada, create an account on https://ccdb.computecanada.ca/ and then apply for resources with CCRI `gsf-624-02
+To get access to simexp resources in compute canada, create an account on https://ccdb.computecanada.ca/ and then apply for resources under tab "My Account",  select "Apply for a new role", then apply the appropriate role with CCRI `gsf-624-02`.
+
 
 ## Setup your environment
 
